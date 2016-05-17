@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.drmenna.superstudent.Home_Activity"
+    >
+    <item android:id="@+id/home" android:title="Home"
+        app:showAsAction="always"
+        android:orderInCategory="1"
+        android:icon="@drawable/home_button1"/>
+
+    <item android:id="@+id/profile" android:title="Profile"
+        android:orderInCategory="2" app:showAsAction="always"
+        android:icon="@drawable/user1"/>
+
+    <item android:id="@+id/to_do_list" android:title="ToDo"
+        android:orderInCategory="3" app:showAsAction="always"
+        android:icon="@drawable/list1"/>
+
+    <item android:id="@+id/materials" android:title="Materials"
+        android:orderInCategory="4" app:showAsAction="always"
+        android:icon="@drawable/books_stack1"/>
+
+    <item android:id="@+id/map" android:title="Map"
+        android:orderInCategory="5" app:showAsAction="always"
+        android:icon="@drawable/map"/>
+
+    <item android:id="@+id/chat" android:title="Chat"
+        android:orderInCategory="6" app:showAsAction="always"
+        android:icon="@drawable/chat1"/>
+</menu>

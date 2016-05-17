@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical|center_horizontal"
+    tools:context="com.example.superstudent.Materials_Activity"
+    android:weightSum="1">
+
+
+    <Button
+        android:layout_width="123dp"
+        android:layout_height="89dp"
+        android:text="Year 1"
+        android:onClick="Choose"
+        android:id="@+id/year1btn"
+        android:background="#308987"
+        android:textColor="#e9e9e9"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/year2btn" />
+
+    <Button
+        android:layout_width="123dp"
+        android:layout_height="89dp"
+        android:text="Year 2"
+        android:onClick="Choose"
+        android:id="@+id/year2btn"
+        android:background="#308987"
+        android:textColor="#e9e9e9"
+        android:layout_marginLeft="28dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/year1btn"
+        android:layout_toEndOf="@+id/year1btn"
+        android:layout_marginStart="28dp" />
+
+    <Button
+        android:layout_width="123dp"
+        android:layout_height="89dp"
+        android:text="Year 3"
+        android:id="@+id/year3btn"
+        android:onClick="Choose"
+        android:background="#308987"
+        android:textColor="#e9e9e9"
+        android:layout_below="@+id/year1btn"
+        android:layout_alignLeft="@+id/year1btn"
+        android:layout_alignStart="@+id/year1btn"
+        android:layout_marginTop="38dp" />
+
+    <Button
+        android:layout_width="123dp"
+        android:layout_height="89dp"
+        android:text="Year 4"
+        android:onClick="Choose"
+        android:id="@+id/year4btn"
+        android:background="#308987"
+        android:textColor="#e9e9e9"
+        android:layout_alignTop="@+id/year3btn"
+        android:layout_alignLeft="@+id/year2btn"
+        android:layout_alignStart="@+id/year2btn" />
+
+
+</RelativeLayout>

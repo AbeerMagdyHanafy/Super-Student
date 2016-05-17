@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".AddTask_Activity"
+    >
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Task Name"
+        android:id="@+id/ed_Task_Name"
+        android:theme="@style/AppTheme.AppBarOverlay" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ed_Task_Description"
+        android:layout_below="@+id/ed_Task_Name"
+        android:layout_marginTop="25dp"
+        android:hint="Task Description"
+        android:inputType="textMultiLine"
+        android:theme="@style/AppTheme.AppBarOverlay" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/bt_save"
+        android:textAllCaps="false"/>
+
+</RelativeLayout>

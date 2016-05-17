@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Task Name:"
+        android:textStyle="italic"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:id="@+id/tv_name_ph"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_text_name"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/tv_name_ph"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Task Description:"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:textColor="#ffffff"
+        android:id="@+id/tv_desc_ph"
+        android:textStyle="italic"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/tv_text_name"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:id="@+id/tv_text_desc"
+        android:textSize="20dp"
+        android:gravity="center_horizontal"
+        android:textColor="#ffffff"
+        android:textStyle="italic"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/tv_desc_ph"
+        />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/edit" />
+</LinearLayout>

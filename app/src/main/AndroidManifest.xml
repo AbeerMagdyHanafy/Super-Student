@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.superstudent">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SignUp_Activity"
+            android:label="@string/title_activity_sign_up_" />
+        <activity
+            android:name=".Login_Activity"
+            android:label="@string/title_activity_login_" />
+        <activity
+            android:name=".Home_Activity"
+            android:label="@string/title_activity_home_" />
+        <activity android:name=".Profile_Activity" />
+        <activity android:name=".Materials_Activity" />
+        <activity android:name=".ToDo_Activity" />
+        <activity android:name=".Map_Activity" />
+        <activity android:name=".AddTask_Activity" />
+        <activity android:name=".Show_Activity" />
+        <activity android:name=".Year1" />
+        <activity android:name=".Year2" />
+        <activity android:name=".Year3" />
+        <activity android:name=".Year4" />
+        <activity android:name="com.example.drmenna.com.example.superstudent.AddMaterialLink_Activity" />
+        <activity android:name=".AddMaterialLink" />
+        <activity android:name=".DeviceList" />
+        <activity android:name=".Chat" />
+        <activity android:name=".msgs" />
+        <!--
+     ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+    </application>
+
+</manifest>
