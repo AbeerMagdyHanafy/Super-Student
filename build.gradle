@@ -18,7 +18,13 @@ allprojects {
         maven
                 {
             url 'https://dl.bintray.com/abeermagdy/maven'
+
         }
+        maven
+                {
+                    url "http://indooratlas-ltd.bintray.com/mvn-public"
+
+                }
 
     }
 }
