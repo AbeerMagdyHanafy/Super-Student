@@ -43,7 +43,6 @@
         <activity android:name=".Materials.Materials_Activity" android:screenOrientation="portrait" />
         <activity android:name=".ToDoList.ToDo_Activity" android:screenOrientation="portrait" />
         <activity android:name=".Map.Map_Activity" android:screenOrientation="portrait" />
-        <activity android:name=".ToDoList.AddTask_Activity" android:screenOrientation="portrait" />
         <activity android:name=".Show_Activity" android:screenOrientation="portrait" />
         <activity android:name=".Materials.Year1" android:screenOrientation="portrait" />
         <activity android:name=".Materials.Year2" android:screenOrientation="portrait" />

@@ -7,25 +7,12 @@
     android:orientation="vertical"
     tools:context=".ToDoList.ToDo_Activity">
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:id="@+id/list_view"
-        android:touchscreenBlocksFocus="true"
-
-        android:theme="@style/Base.Widget.AppCompat.ListView">
-
-    </ListView>
 
 
+    <com.example.abeer.todo.ToDo
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/add" />
 
 
 </LinearLayout>

@@ -29,11 +29,10 @@ dependencies {
     compile 'com.android.support:design:22.2.1'
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
     compile 'com.example.abeer.component:customview:1.0.5'
-
+    compile 'com.example.abeer.todolist:todo:1.0.7'
     compile 'com.indooratlas.android:indooratlas-android-sdk:2.1.2@aar'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.davemorrissey.labs:subsampling-scale-image-view:3.2.0'
     compile 'com.pubnub:pubnub-android:3.7.5'
     //compile 'com.android.support:design:23.0.1'
-
 }
