@@ -58,8 +58,8 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name="com.example.BTChat.BTChat" />
-        <activity android:name="com.example.BTChat.DeviceList"></activity>
+        <activity android:name="com.example.BTChat.BTChat" android:screenOrientation="portrait"/>
+        <activity android:name="com.example.BTChat.DeviceList" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
