@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="17dp"
-    tools:context="com.example.superstudent.SignUp_Activity">
+    tools:context=".Profile.SignUp_Activity">
 
     <EditText
         android:layout_width="match_parent"

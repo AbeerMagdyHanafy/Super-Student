@@ -1,4 +1,4 @@
-package com.example.superstudent;
+package com.example.superstudent.Materials;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.MaterialsDB.Material_DB_Helper;
 import com.example.MaterialsDB.Material_Database;
+import com.example.superstudent.R;
 
 public class AddMaterialLink extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.superstudent;
+package com.example.superstudent.Map;
 
 /**
  * Created by Nouran on 5/17/2016.

@@ -2,11 +2,13 @@ package com.example.superstudent;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import com.example.superstudent.Profile.Login_Activity;
+import com.example.superstudent.Profile.SignUp_Activity;
 
 
 public class MainActivity extends AppCompatActivity {

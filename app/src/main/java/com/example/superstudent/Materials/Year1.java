@@ -1,4 +1,4 @@
-package com.example.superstudent;
+package com.example.superstudent.Materials;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -15,6 +15,7 @@ import android.widget.SimpleCursorAdapter;
 
 import com.example.MaterialsDB.Material_DB_Helper;
 import com.example.MaterialsDB.Material_Database;
+import com.example.superstudent.R;
 
 public class Year1 extends AppCompatActivity {
 

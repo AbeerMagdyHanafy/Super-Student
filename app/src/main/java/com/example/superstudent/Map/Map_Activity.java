@@ -1,4 +1,4 @@
-package com.example.superstudent;
+package com.example.superstudent.Map;
 
 import android.app.DownloadManager;
 import android.content.BroadcastReceiver;
@@ -21,6 +21,11 @@ import android.widget.Toast;
 
 import com.davemorrissey.labs.subscaleview.ImageSource;
 import com.example.BTChat.BTChat;
+import com.example.superstudent.Quotes.Home_Activity;
+import com.example.superstudent.Materials.Materials_Activity;
+import com.example.superstudent.Profile.Profile_Activity;
+import com.example.superstudent.R;
+import com.example.superstudent.ToDoList.ToDo_Activity;
 import com.indooratlas.android.sdk.IALocation;
 import com.indooratlas.android.sdk.IALocationListener;
 import com.indooratlas.android.sdk.IALocationManager;
@@ -57,6 +62,8 @@ public class Map_Activity extends AppCompatActivity {
         @Override
         public void onLocationChanged(IALocation location) {
             Log.d(TAG, "location is: " + location.getLatitude() + "," + location.getLongitude());
+            if( location.getAccuracy()==30)
+                return;
             if (mImageView != null && mImageView.isReady()) {
                 IALatLng latLng = new IALatLng(location.getLatitude(), location.getLongitude());
                 PointF point = mFloorPlan.coordinateToPoint(latLng);
@@ -73,7 +80,7 @@ public class Map_Activity extends AppCompatActivity {
             if (region.getType() == IARegion.TYPE_FLOOR_PLAN) {
                 String id = region.getId();
                 Log.d(TAG, "floorPlan changed to " + id);
-                Toast.makeText(Map_Activity.this, id, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Map_Activity.this, id, Toast.LENGTH_SHORT).show();
                 fetchFloorPlan(id);
             }
         }
@@ -90,13 +97,7 @@ public class Map_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
         // prevent the screen going to sleep while app is on foreground
-
-
-//        ActionBar logo = getSupportActionBar();
-//        logo.setLogo(R.drawable.logo);
-//        logo.setDisplayUseLogoEnabled(true);
-
-        findViewById(android.R.id.content).setKeepScreenOn(true);
+        //findViewById(android.R.id.content).setKeepScreenOn(true);
 
         mImageView = (BlueDotView) findViewById(R.id.imageView);
 

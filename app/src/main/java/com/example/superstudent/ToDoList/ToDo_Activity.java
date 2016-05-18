@@ -1,4 +1,4 @@
-package com.example.superstudent;
+package com.example.superstudent.ToDoList;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,6 +20,12 @@ import android.widget.Toast;
 import com.example.BTChat.BTChat;
 import com.example.ToDoDB.DataBase;
 import com.example.ToDoDB.DataBaseHelper;
+import com.example.superstudent.Map.Map_Activity;
+import com.example.superstudent.Materials.Materials_Activity;
+import com.example.superstudent.Profile.Profile_Activity;
+import com.example.superstudent.Quotes.Home_Activity;
+import com.example.superstudent.R;
+import com.example.superstudent.Show_Activity;
 
 public class ToDo_Activity extends AppCompatActivity {
 
