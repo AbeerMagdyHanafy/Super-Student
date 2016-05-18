@@ -11,4 +11,5 @@
     <color name="foreground_material_light">#1c304c</color>
     <color name="primary_text_default_material_dark">#ffffff</color>
     <color name="primary_dark_material_dark">#ffffff</color>
+    <color name="dot_color">#84c69b</color>
 </resources>

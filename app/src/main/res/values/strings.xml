@@ -12,5 +12,6 @@
         <item> TA </item>
     </string-array>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="indooratlas_floor_plan_id">8984a7c7-6328-48a5-b8d8-01dac3305158</string>
 
 </resources>
