@@ -1,4 +1,4 @@
-package com.example.superstudent;
+package com.example.superstudent.ToDoList;
 
 import android.content.ContentValues;
 import android.content.Intent;
@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.ToDoDB.DataBase;
 import com.example.ToDoDB.DataBaseHelper;
+import com.example.superstudent.R;
 
 
 public class AddTask_Activity extends AppCompatActivity {

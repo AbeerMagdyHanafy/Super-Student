@@ -23,7 +23,7 @@
 
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name" android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,26 +31,26 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignUp_Activity"
-            android:label="@string/title_activity_sign_up_" />
+            android:name=".Profile.SignUp_Activity"
+            android:label="@string/title_activity_sign_up_" android:screenOrientation="portrait" />
         <activity
-            android:name=".Login_Activity"
-            android:label="@string/title_activity_login_" />
+            android:name=".Profile.Login_Activity"
+            android:label="@string/title_activity_login_" android:screenOrientation="portrait" />
         <activity
-            android:name=".Home_Activity"
-            android:label="@string/title_activity_home_" />
-        <activity android:name=".Profile_Activity" />
-        <activity android:name=".Materials_Activity" />
-        <activity android:name=".ToDo_Activity" />
-        <activity android:name=".Map_Activity" />
-        <activity android:name=".AddTask_Activity" />
-        <activity android:name=".Show_Activity" />
-        <activity android:name=".Year1" />
-        <activity android:name=".Year2" />
-        <activity android:name=".Year3" />
-        <activity android:name=".Year4" />
-        <activity android:name=".AddMaterialLink" />
-        <activity android:name="com.example.BTChat.Chat" />
+            android:name=".Quotes.Home_Activity"
+            android:label="@string/title_activity_home_" android:screenOrientation="portrait" />
+        <activity android:name=".Profile.Profile_Activity" android:screenOrientation="portrait" />
+        <activity android:name=".Materials.Materials_Activity" android:screenOrientation="portrait" />
+        <activity android:name=".ToDoList.ToDo_Activity" android:screenOrientation="portrait" />
+        <activity android:name=".Map.Map_Activity" android:screenOrientation="portrait" />
+        <activity android:name=".ToDoList.AddTask_Activity" android:screenOrientation="portrait" />
+        <activity android:name=".Show_Activity" android:screenOrientation="portrait" />
+        <activity android:name=".Materials.Year1" android:screenOrientation="portrait" />
+        <activity android:name=".Materials.Year2" android:screenOrientation="portrait" />
+        <activity android:name=".Materials.Year3" android:screenOrientation="portrait" />
+        <activity android:name=".Materials.Year4" android:screenOrientation="portrait" />
+        <activity android:name=".Materials.AddMaterialLink" android:screenOrientation="portrait" />
+        <activity android:name="com.example.BTChat.Chat"  />
         <!--
      ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.

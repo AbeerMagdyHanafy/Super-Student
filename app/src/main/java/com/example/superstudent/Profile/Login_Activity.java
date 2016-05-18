@@ -1,4 +1,4 @@
-package com.example.superstudent;
+package com.example.superstudent.Profile;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,39 +7,35 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Spinner;
+
+import com.example.superstudent.Quotes.Home_Activity;
+import com.example.superstudent.R;
 
 
-public class SignUp_Activity extends AppCompatActivity {
+public class Login_Activity extends AppCompatActivity {
 
-    EditText ed_username, ed_password, ed_email;
-    Spinner spinner_position;
-
+    EditText ed_username_login, ed_password_login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign__up);
+        setContentView(R.layout.activity_login_);
 
-        getSupportActionBar().setTitle(" Sign Up");
+        getSupportActionBar().setTitle("Login");
 
-        ed_username = (EditText) findViewById(R.id.ed_username);
-        ed_password = (EditText) findViewById(R.id.ed_password);
-        ed_email = (EditText) findViewById(R.id.ed_email);
-
-        spinner_position = (Spinner) findViewById(R.id.spinner_position);
-
+        ed_username_login = (EditText) findViewById(R.id.ed_username_login);
+        ed_password_login = (EditText) findViewById(R.id.ed_password_login);
     }
 
-    public void submit(View view) {
-        Intent submit = new Intent(this, Home_Activity.class);
-        startActivity(submit);
+    public void done(View view) {
+        Intent done = new Intent(this, Home_Activity.class);
+        startActivity(done);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_sign__up, menu);
+        getMenuInflater().inflate(R.menu.menu_login_, menu);
         return true;
     }
 

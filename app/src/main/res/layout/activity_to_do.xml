@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:padding="16dp"
     android:orientation="vertical"
-    tools:context="com.example.superstudent.ToDo_Activity">
+    tools:context=".ToDoList.ToDo_Activity">
 
     <ListView
         android:layout_width="match_parent"

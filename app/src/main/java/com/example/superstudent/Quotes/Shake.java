@@ -1,4 +1,4 @@
-package com.example.superstudent;
+package com.example.superstudent.Quotes;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;

@@ -21,12 +21,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.superstudent.Home_Activity;
-import com.example.superstudent.Map_Activity;
-import com.example.superstudent.Materials_Activity;
-import com.example.superstudent.Profile_Activity;
+import com.example.superstudent.Quotes.Home_Activity;
+import com.example.superstudent.Map.Map_Activity;
+import com.example.superstudent.Materials.Materials_Activity;
+import com.example.superstudent.Profile.Profile_Activity;
 import com.example.superstudent.R;
-import com.example.superstudent.ToDo_Activity;
+import com.example.superstudent.ToDoList.ToDo_Activity;
 
 public class BTChat extends AppCompatActivity {
 

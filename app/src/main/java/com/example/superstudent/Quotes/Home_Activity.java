@@ -1,4 +1,4 @@
-package com.example.superstudent;
+package com.example.superstudent.Quotes;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,11 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.BTChat.BTChat;
+import com.example.superstudent.Map.Map_Activity;
+import com.example.superstudent.Materials.Materials_Activity;
+import com.example.superstudent.Profile.Profile_Activity;
+import com.example.superstudent.R;
+import com.example.superstudent.ToDoList.ToDo_Activity;
 
 
 public class Home_Activity extends AppCompatActivity {

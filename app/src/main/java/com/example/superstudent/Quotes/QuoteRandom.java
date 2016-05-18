@@ -1,4 +1,4 @@
-package com.example.superstudent;
+package com.example.superstudent.Quotes;
 
 import java.util.Random;
 

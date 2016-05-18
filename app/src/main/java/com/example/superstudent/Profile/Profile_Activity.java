@@ -1,4 +1,4 @@
-package com.example.superstudent;
+package com.example.superstudent.Profile;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,26 +7,38 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.BTChat.BTChat;
+import com.example.superstudent.Map.Map_Activity;
+import com.example.superstudent.Materials.Materials_Activity;
+import com.example.superstudent.Quotes.Home_Activity;
+import com.example.superstudent.R;
+import com.example.superstudent.ToDoList.ToDo_Activity;
 
 
-public class Materials_Activity extends AppCompatActivity {
-
-
+public class Profile_Activity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_materials);
+        setContentView(R.layout.activity_profile);
 
         ActionBar logo = getSupportActionBar();
-        logo.setTitle("Materials");
-   }
+        logo.setTitle("Profile");
+    }
+
+    public void onclick(View view)
+    {
+        Toast.makeText(getApplicationContext(), "hhhhhhhh component" , Toast.LENGTH_LONG).show();
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_materials, menu);
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_profile, menu);
         return true;
     }
 
@@ -39,51 +51,24 @@ public class Materials_Activity extends AppCompatActivity {
             startActivity(intent);
             return true;
         } else if (id == R.id.profile) {
-            intent = new Intent(getApplicationContext(), Profile_Activity.class);
-            startActivity(intent);
             return true;
         } else if (id == R.id.to_do_list) {
             intent = new Intent(getApplicationContext(), ToDo_Activity.class);
             startActivity(intent);
             return true;
         } else if (id == R.id.materials) {
+            intent = new Intent(getApplicationContext(), Materials_Activity.class);
+            startActivity(intent);
             return true;
         } else if (id == R.id.map) {
             intent = new Intent(getApplicationContext(), Map_Activity.class);
             startActivity(intent);
             return true;
-        }
-        else if (id == R.id.chat) {
+        }else if (id == R.id.chat) {
             intent = new Intent(getApplicationContext(), BTChat.class);
             startActivity(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
-
-    public void Choose(View view)
-    {
-        if(view.getId()==R.id.year1btn)
-        {
-            Intent done = new Intent(this, Year1.class);
-            startActivity(done);
-        }
-        if(view.getId()==R.id.year2btn)
-        {
-            Intent done = new Intent(this, Year2.class);
-            startActivity(done);
-        }
-        if(view.getId()==R.id.year3btn)
-        {
-            Intent done = new Intent(this, Year3.class);
-            startActivity(done);
-        }
-        if(view.getId()==R.id.year4btn)
-        {
-            Intent done = new Intent(this, Year4.class);
-            startActivity(done);
-        }
-    }
-
-
 }
