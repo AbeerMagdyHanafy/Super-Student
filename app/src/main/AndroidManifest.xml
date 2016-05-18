@@ -50,7 +50,6 @@
         <activity android:name=".Materials.Year3" android:screenOrientation="portrait" />
         <activity android:name=".Materials.Year4" android:screenOrientation="portrait" />
         <activity android:name=".Materials.AddMaterialLink" android:screenOrientation="portrait" />
-        <activity android:name="com.example.BTChat.Chat"  />
         <!--
      ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.

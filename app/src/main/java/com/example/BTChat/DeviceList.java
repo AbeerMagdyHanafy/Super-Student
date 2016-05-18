@@ -54,14 +54,14 @@ public class DeviceList extends AppCompatActivity {
 
         setTitle(R.string.empty);
         // Set result CANCELED in case the user backs out
-        // setResult(Activity.RESULT_CANCELED);
+        //setResult(Activity.RESULT_CANCELED);
 
         // Initialize the button to perform device discovery
         Button scanButton = (Button) findViewById(R.id.button_scan);
         scanButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 doDiscovery();
-                //v.setVisibility(View.GONE);
+                v.setVisibility(View.GONE);
             }
         });
 
@@ -154,7 +154,7 @@ public class DeviceList extends AppCompatActivity {
             // Get the device MAC address, which is the last 17 chars in the View
             String info = ((TextView) v).getText().toString();
             String address = info.substring(info.length() - 17);
-            Toast.makeText(getApplicationContext(),address,Toast.LENGTH_LONG);
+            Toast.makeText(getApplicationContext(), address, Toast.LENGTH_LONG);
 
             // Create the result Intent and include the MAC address
             Intent intent = new Intent();

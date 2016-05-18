@@ -151,9 +151,10 @@ public class BTChat extends AppCompatActivity {
             btnDeviceList.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-                    Intent intent = new Intent(BTChat.this, DeviceList.class);
-                    startActivity(intent);
+                    Intent serverIntent = new Intent(BTChat.this, DeviceList.class);
+                    startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_SECURE);
+                    //Intent intent = new Intent(BTChat.this, DeviceList.class);
+                    //startActivity(intent);
                 }
             });
         }
