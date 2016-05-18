@@ -41,6 +41,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Quotes.Home_Activity"
+<<<<<<< HEAD
             android:label="@string/title_activity_home_"
             android:screenOrientation="portrait" />
         <activity
@@ -76,6 +77,19 @@
         <activity
             android:name=".Materials.AddMaterialLink"
             android:screenOrientation="portrait" />
+=======
+            android:label="@string/title_activity_home_" android:screenOrientation="portrait" />
+        <activity android:name=".Profile.Profile_Activity" android:screenOrientation="portrait" />
+        <activity android:name=".Materials.Materials_Activity" android:screenOrientation="portrait" />
+        <activity android:name=".ToDoList.ToDo_Activity" android:screenOrientation="portrait" />
+        <activity android:name=".Map.Map_Activity" android:screenOrientation="portrait" />
+        <activity android:name=".Show_Activity" android:screenOrientation="portrait" />
+        <activity android:name=".Materials.Year1" android:screenOrientation="portrait" />
+        <activity android:name=".Materials.Year2" android:screenOrientation="portrait" />
+        <activity android:name=".Materials.Year3" android:screenOrientation="portrait" />
+        <activity android:name=".Materials.Year4" android:screenOrientation="portrait" />
+        <activity android:name=".Materials.AddMaterialLink" android:screenOrientation="portrait" />
+>>>>>>> 442b3e89057c82027fbec7fda92bd85626dadd93
         <!--
      ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
