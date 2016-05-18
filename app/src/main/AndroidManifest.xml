@@ -23,7 +23,8 @@
 
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" android:screenOrientation="portrait" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,24 +33,49 @@
         </activity>
         <activity
             android:name=".Profile.SignUp_Activity"
-            android:label="@string/title_activity_sign_up_" android:screenOrientation="portrait" />
+            android:label="@string/title_activity_sign_up_"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Profile.Login_Activity"
-            android:label="@string/title_activity_login_" android:screenOrientation="portrait" />
+            android:label="@string/title_activity_login_"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Quotes.Home_Activity"
-            android:label="@string/title_activity_home_" android:screenOrientation="portrait" />
-        <activity android:name=".Profile.Profile_Activity" android:screenOrientation="portrait" />
-        <activity android:name=".Materials.Materials_Activity" android:screenOrientation="portrait" />
-        <activity android:name=".ToDoList.ToDo_Activity" android:screenOrientation="portrait" />
-        <activity android:name=".Map.Map_Activity" android:screenOrientation="portrait" />
-        <activity android:name=".ToDoList.AddTask_Activity" android:screenOrientation="portrait" />
-        <activity android:name=".Show_Activity" android:screenOrientation="portrait" />
-        <activity android:name=".Materials.Year1" android:screenOrientation="portrait" />
-        <activity android:name=".Materials.Year2" android:screenOrientation="portrait" />
-        <activity android:name=".Materials.Year3" android:screenOrientation="portrait" />
-        <activity android:name=".Materials.Year4" android:screenOrientation="portrait" />
-        <activity android:name=".Materials.AddMaterialLink" android:screenOrientation="portrait" />
+            android:label="@string/title_activity_home_"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Profile.Profile_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Materials.Materials_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ToDoList.ToDo_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Map.Map_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ToDoList.AddTask_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Show_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Materials.Year1"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Materials.Year2"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Materials.Year3"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Materials.Year4"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Materials.AddMaterialLink"
+            android:screenOrientation="portrait" />
         <!--
      ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -59,7 +85,8 @@
             android:value="@integer/google_play_services_version" />
 
         <activity android:name="com.example.BTChat.BTChat" />
-        <activity android:name="com.example.BTChat.DeviceList"></activity>
+        <activity android:name="com.example.BTChat.DeviceList" />
+        <activity android:name="com.example.BTChat.BTSettings"></activity>
     </application>
 
 </manifest>

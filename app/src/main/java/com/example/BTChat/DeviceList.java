@@ -52,7 +52,7 @@ public class DeviceList extends AppCompatActivity {
         //requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.activity_device_list);
 
-        setTitle(R.string.empty);
+        setTitle(R.string.select_device);
         // Set result CANCELED in case the user backs out
         //setResult(Activity.RESULT_CANCELED);
 
@@ -105,6 +105,8 @@ public class DeviceList extends AppCompatActivity {
             String noDevices = getResources().getText(R.string.none_paired).toString();
             pairedDevicesArrayAdapter.add(noDevices);
         }
+
+
     }
 
     @Override
@@ -127,7 +129,7 @@ public class DeviceList extends AppCompatActivity {
         // Log.d(TAG, "doDiscovery()");
 
         // Indicate scanning in the title
-        setProgressBarIndeterminateVisibility(true);
+       // setProgressBarIndeterminateVisibility(true);
         setTitle(R.string.scanning);
 
         // Turn on sub-title for new devices
@@ -156,9 +158,16 @@ public class DeviceList extends AppCompatActivity {
             String address = info.substring(info.length() - 17);
             Toast.makeText(getApplicationContext(), address, Toast.LENGTH_LONG);
 
+            Intent intentSettings = getIntent();
+            String setting = intentSettings.getStringExtra("item");
+
             // Create the result Intent and include the MAC address
             Intent intent = new Intent();
             intent.putExtra(EXTRA_DEVICE_ADDRESS, address);
+            intent.putExtra("setting",setting);
+
+
+
 
             // Set result and finish this Activity
             setResult(Activity.RESULT_OK, intent);

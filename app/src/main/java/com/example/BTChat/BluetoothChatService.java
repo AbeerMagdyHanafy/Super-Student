@@ -257,8 +257,8 @@ public class BluetoothChatService {
         // Send a failure message back to the Activity
         Message msg = mHandler.obtainMessage(Constants.MESSAGE_TOAST);
         Bundle bundle = new Bundle();
-        //bundle.putString(Constants.TOAST, "Unable to connect device");
-        bundle.putString(Constants.TOAST, "Device is not connected app wil send to server"+DeviceList.EXTRA_DEVICE_ADDRESS);
+        bundle.putString(Constants.TOAST, "Unable to connect device");
+        //bundle.putString(Constants.TOAST, "Device is not connected app wil send to server"+DeviceList.EXTRA_DEVICE_ADDRESS);
 
         msg.setData(bundle);
         mHandler.sendMessage(msg);
@@ -293,9 +293,9 @@ public class BluetoothChatService {
         private String mSocketType;
 
         public AcceptThread(boolean secure) {
+
             BluetoothServerSocket tmp = null;
             mSocketType = secure ? "Secure" : "Insecure";
-
             // Create a new listening server socket
             try {
                 if (secure) {

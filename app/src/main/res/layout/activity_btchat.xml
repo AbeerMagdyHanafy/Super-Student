@@ -14,7 +14,14 @@
         android:layout_height="30dp"
         android:layout_width="40dp"
         android:background="@drawable/friends"
-        android:layout_marginLeft="300dp" />
+        android:layout_alignParentRight="true" />
+    <Button
+        android:id="@+id/btn_bt_settings"
+        android:layout_height="30dp"
+        android:layout_width="40dp"
+        android:background="@drawable/bluetooth"
+        android:layout_toLeftOf="@+id/btn_device_list"
+        />
     <TextView
         android:id="@+id/state"
         android:layout_width="wrap_content"

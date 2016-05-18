@@ -29,7 +29,7 @@ import com.example.superstudent.ToDoList.ToDo_Activity;
 
 public class BTChat extends AppCompatActivity {
 
-        //private static final String TAG = "BluetoothChatFragment";
+
 
         // Intent request codes
         private static final int REQUEST_CONNECT_DEVICE_SECURE = 1;
@@ -67,8 +67,9 @@ public class BTChat extends AppCompatActivity {
         private BluetoothChatService mChatService = null;
 
 
-        Button btnDeviceList;
+        Button deviceListBtn;
         TextView stateTxtView;
+        Button  btSettingsBtn;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -76,18 +77,27 @@ public class BTChat extends AppCompatActivity {
             setContentView(R.layout.activity_btchat);
 
             stateTxtView=(TextView) findViewById(R.id.state);
-            btnDeviceList=(Button) findViewById(R.id.btn_device_list);
+            deviceListBtn=(Button) findViewById(R.id.btn_device_list);
+            btSettingsBtn=(Button) findViewById(R.id.btn_bt_settings);
             mConversationView = (ListView) findViewById(R.id.in);
             mOutEditText = (EditText) findViewById(R.id.edit_text_out);
             mSendButton = (Button) findViewById(R.id.button_send);
             // Get local Bluetooth adapter
             mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
-            btnDeviceList.setOnClickListener(new View.OnClickListener() {
+            deviceListBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
                     Intent intent = new Intent(BTChat.this, DeviceList.class);
+                    startActivity(intent);
+                }
+            });
+
+            btSettingsBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(BTChat.this, BTSettings.class);
                     startActivity(intent);
                 }
             });
@@ -116,14 +126,7 @@ public class BTChat extends AppCompatActivity {
             } else if (mChatService == null) {
                 setupChat();
             }
-            btnDeviceList.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
 
-                    Intent intent = new Intent(BTChat.this, DeviceList.class);
-                    startActivity(intent);
-                }
-            });
         }
 
         @Override
@@ -148,29 +151,10 @@ public class BTChat extends AppCompatActivity {
                     mChatService.start();
                 }
             }
-            btnDeviceList.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent serverIntent = new Intent(BTChat.this, DeviceList.class);
-                    startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_SECURE);
-                    //Intent intent = new Intent(BTChat.this, DeviceList.class);
-                    //startActivity(intent);
-                }
-            });
+
         }
 
-    /*@Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_bluetooth_chat, container, false);
-    }*/
 
-    /*@Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        mConversationView = (ListView) view.findViewById(R.id.in);
-        mOutEditText = (EditText) view.findViewById(R.id.edit_text_out);
-        mSendButton = (Button) view.findViewById(R.id.button_send);
-    }*/
 
         /**
          * Set up the UI and background operations for chat.
@@ -266,15 +250,6 @@ public class BTChat extends AppCompatActivity {
      * @param resId a string resource ID
      */
     private void setStatus(int resId) {
-        //FragmentActivity activity = getActivity();
-       /* if (null == this) {
-            return;
-        }
-        final ActionBar actionBar = this.getActionBar();
-        if (null == actionBar) {
-            return;
-        }
-        actionBar.setSubtitle(resId);*/
         stateTxtView.setText(resId);
     }
 
@@ -284,15 +259,6 @@ public class BTChat extends AppCompatActivity {
      * @param subTitle status
      */
     private void setStatus(CharSequence subTitle) {
-        //FragmentActivity activity = getActivity();
-       /* if (null == this) {
-            return;
-        }
-        final ActionBar actionBar = this.getActionBar();
-       /* if (null == actionBar) {
-            return;
-        }
-        actionBar.setSubtitle(subTitle);*/
         stateTxtView.setText(subTitle);
     }
 
@@ -302,7 +268,6 @@ public class BTChat extends AppCompatActivity {
     private final Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            //FragmentActivity activity = getActivity();
             switch (msg.what) {
                 case Constants.MESSAGE_STATE_CHANGE:
                     switch (msg.arg1) {
