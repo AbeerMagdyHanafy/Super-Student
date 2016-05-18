@@ -1,6 +1,5 @@
 package com.example.BTChat;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -69,12 +68,14 @@ public class BTChat extends AppCompatActivity {
 
 
         Button btnDeviceList;
+        TextView stateTxtView;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_btchat);
 
+            stateTxtView=(TextView) findViewById(R.id.state);
             btnDeviceList=(Button) findViewById(R.id.btn_device_list);
             mConversationView = (ListView) findViewById(R.id.in);
             mOutEditText = (EditText) findViewById(R.id.edit_text_out);
@@ -271,9 +272,9 @@ public class BTChat extends AppCompatActivity {
         final ActionBar actionBar = this.getActionBar();
         if (null == actionBar) {
             return;
-        }*/
-        final ActionBar actionBar = this.getActionBar();
-        actionBar.setSubtitle(resId);
+        }
+        actionBar.setSubtitle(resId);*/
+        stateTxtView.setText(resId);
     }
 
     /**
@@ -285,12 +286,13 @@ public class BTChat extends AppCompatActivity {
         //FragmentActivity activity = getActivity();
        /* if (null == this) {
             return;
-        }*/
+        }
         final ActionBar actionBar = this.getActionBar();
        /* if (null == actionBar) {
             return;
-        }*/
-        actionBar.setSubtitle(subTitle);
+        }
+        actionBar.setSubtitle(subTitle);*/
+        stateTxtView.setText(subTitle);
     }
 
     /**

@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.superstudent.R;
 
@@ -153,6 +154,7 @@ public class DeviceList extends AppCompatActivity {
             // Get the device MAC address, which is the last 17 chars in the View
             String info = ((TextView) v).getText().toString();
             String address = info.substring(info.length() - 17);
+            Toast.makeText(getApplicationContext(),address,Toast.LENGTH_LONG);
 
             // Create the result Intent and include the MAC address
             Intent intent = new Intent();
