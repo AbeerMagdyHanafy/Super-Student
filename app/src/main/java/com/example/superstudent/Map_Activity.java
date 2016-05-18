@@ -12,8 +12,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Looper;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
@@ -22,13 +20,12 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.davemorrissey.labs.subscaleview.ImageSource;
+import com.example.BTChat.BTChat;
 import com.indooratlas.android.sdk.IALocation;
 import com.indooratlas.android.sdk.IALocationListener;
 import com.indooratlas.android.sdk.IALocationManager;
 import com.indooratlas.android.sdk.IALocationRequest;
 import com.indooratlas.android.sdk.IARegion;
-import com.example.superstudent.R;
-//import com.indooratlas.android.sdk.examples.SdkExample;
 import com.indooratlas.android.sdk.resources.IAFloorPlan;
 import com.indooratlas.android.sdk.resources.IALatLng;
 import com.indooratlas.android.sdk.resources.IALocationListenerSupport;
@@ -38,6 +35,8 @@ import com.indooratlas.android.sdk.resources.IAResultCallback;
 import com.indooratlas.android.sdk.resources.IATask;
 
 import java.io.File;
+
+//import com.indooratlas.android.sdk.examples.SdkExample;
 
 public class Map_Activity extends AppCompatActivity {
 
@@ -268,7 +267,7 @@ public class Map_Activity extends AppCompatActivity {
         }
 
         else if (id == R.id.chat) {
-            intent = new Intent(Map_Activity.this, Chat.class);
+            intent = new Intent(Map_Activity.this, BTChat.class);
             startActivity(intent);
             return true;
         }

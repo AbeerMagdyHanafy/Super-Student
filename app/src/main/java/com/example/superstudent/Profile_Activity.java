@@ -4,11 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
+import com.example.BTChat.BTChat;
 
 
 public class Profile_Activity extends AppCompatActivity {
@@ -59,7 +60,7 @@ public class Profile_Activity extends AppCompatActivity {
             startActivity(intent);
             return true;
         }else if (id == R.id.chat) {
-            intent = new Intent(getApplicationContext(), Chat.class);
+            intent = new Intent(getApplicationContext(), BTChat.class);
             startActivity(intent);
             return true;
         }

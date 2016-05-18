@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.BTChat.BTChat;
 
 
 public class Materials_Activity extends AppCompatActivity {
@@ -53,7 +54,7 @@ public class Materials_Activity extends AppCompatActivity {
             return true;
         }
         else if (id == R.id.chat) {
-            intent = new Intent(getApplicationContext(), Chat.class);
+            intent = new Intent(getApplicationContext(), BTChat.class);
             startActivity(intent);
             return true;
         }

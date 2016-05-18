@@ -1,18 +1,17 @@
 package com.example.superstudent;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+
+import com.example.BTChat.BTChat;
 
 
 public class Home_Activity extends AppCompatActivity {
@@ -116,7 +115,7 @@ public class Home_Activity extends AppCompatActivity {
         }
 
         else if (id == R.id.chat) {
-            intent = new Intent(Home_Activity.this, Chat.class);
+            intent = new Intent(Home_Activity.this, BTChat.class);
             startActivity(intent);
             return true;
         }

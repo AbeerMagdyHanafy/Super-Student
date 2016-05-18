@@ -2,8 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.superstudent">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -14,10 +16,10 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.indooratlas.android.sdk.API_KEY"
-            android:value="8be7a597-6fd3-4e74-9c54-0841ee860e0d"/>
+            android:value="8be7a597-6fd3-4e74-9c54-0841ee860e0d" />
         <meta-data
             android:name="com.indooratlas.android.sdk.API_SECRET"
-            android:value="DA3mE567auyu3L5KOnXGTDwJSlsPNWsnYYQwdkrkdYRZBv23Ks0!mk9VbQLC0KDJ!)0cvyVeCQCSoPaP(N2T3bs%IFX1MkG5KKyDDbg0gZJ%A8%t!acBMgaOn1fulhPS"/>
+            android:value="DA3mE567auyu3L5KOnXGTDwJSlsPNWsnYYQwdkrkdYRZBv23Ks0!mk9VbQLC0KDJ!)0cvyVeCQCSoPaP(N2T3bs%IFX1MkG5KKyDDbg0gZJ%A8%t!acBMgaOn1fulhPS" />
 
         <activity
             android:name=".MainActivity"
@@ -48,9 +50,7 @@
         <activity android:name=".Year3" />
         <activity android:name=".Year4" />
         <activity android:name=".AddMaterialLink" />
-        <activity android:name=".DeviceList" />
-        <activity android:name=".Chat" />
-        <activity android:name=".msgs" />
+        <activity android:name="com.example.BTChat.Chat" />
         <!--
      ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -59,6 +59,8 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
+        <activity android:name="com.example.BTChat.BTChat" />
+        <activity android:name="com.example.BTChat.DeviceList"></activity>
     </application>
 
 </manifest>

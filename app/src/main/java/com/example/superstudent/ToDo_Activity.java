@@ -17,8 +17,9 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
-import com.example.DataBase.DataBase;
-import com.example.DataBase.DataBaseHelper;
+import com.example.BTChat.BTChat;
+import com.example.ToDoDB.DataBase;
+import com.example.ToDoDB.DataBaseHelper;
 
 public class ToDo_Activity extends AppCompatActivity {
 
@@ -154,7 +155,7 @@ public class ToDo_Activity extends AppCompatActivity {
             startActivity(intent);
             return true;
         }else if (id == R.id.chat) {
-            intent = new Intent(getApplicationContext(), Chat.class);
+            intent = new Intent(getApplicationContext(), BTChat.class);
             startActivity(intent);
             return true;
         }

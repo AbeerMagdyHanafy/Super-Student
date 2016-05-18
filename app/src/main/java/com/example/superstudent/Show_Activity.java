@@ -13,8 +13,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.DataBase.DataBase;
-import com.example.DataBase.DataBaseHelper;
+import com.example.ToDoDB.DataBase;
+import com.example.ToDoDB.DataBaseHelper;
 
 
 public class Show_Activity extends AppCompatActivity {

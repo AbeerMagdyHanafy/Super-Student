@@ -11,8 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.DataBase.DataBase;
-import com.example.DataBase.DataBaseHelper;
+import com.example.ToDoDB.DataBase;
+import com.example.ToDoDB.DataBaseHelper;
 
 
 public class AddTask_Activity extends AppCompatActivity {
