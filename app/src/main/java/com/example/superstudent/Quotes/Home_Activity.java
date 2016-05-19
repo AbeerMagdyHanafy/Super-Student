@@ -33,8 +33,7 @@ public class Home_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        ActionBar logo = getSupportActionBar();
-        logo.setTitle("Home");
+
 
         tv_quote = (TextView) findViewById(R.id.tv_quote);
         quoteRandom =new QuoteRandom();
@@ -66,27 +65,6 @@ public class Home_Activity extends AppCompatActivity {
 
     }
 
-//    @Override
-//    public boolean onKeyDown(int keyCode, KeyEvent event) {
-//        if (keyCode == KeyEvent.KEYCODE_BACK) {
-//            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(Home_Activity.this);
-//            alertDialogBuilder
-//                    .setMessage("Click yes to exit!")
-//                    .setCancelable(false)
-//                    .setNegativeButton("Yes", new DialogInterface.OnClickListener() {
-//                        public void onClick(DialogInterface dialog, int id) {
-//                            Home_Activity.this.finish();
-//                            System.exit(0);
-//                        }
-//                    })
-//                    .setPositiveButton("No", new DialogInterface.OnClickListener() {
-//                        public void onClick(DialogInterface dialog, int id) {
-//                            dialog.cancel();
-//                        }
-//                    }).show();
-//        }
-//        return true;
-//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

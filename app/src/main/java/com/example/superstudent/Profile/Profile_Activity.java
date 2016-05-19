@@ -24,14 +24,10 @@ public class Profile_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        ActionBar logo = getSupportActionBar();
-        logo.setTitle("Profile");
+
     }
 
-    public void onclick(View view)
-    {
-        Toast.makeText(getApplicationContext(), "hhhhhhhh component" , Toast.LENGTH_LONG).show();
-    }
+
 
 
 
