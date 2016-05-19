@@ -1,6 +1,5 @@
 package com.example.BTChat;
 
-import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -16,8 +15,8 @@ public class BTSettings extends AppCompatActivity {
 
     private static final int REQUEST_CONNECT_DEVICE_SECURE = 1;
     private static final int REQUEST_CONNECT_DEVICE_INSECURE = 2;
-    private static final int REQUEST_ENABLE_BT = 3;
-    private BluetoothAdapter mBluetoothAdapter = null;
+
+    public BTChat chat;
 
     private ListView settingsView;
     private ArrayAdapter<String> settingsArrayAdapter;
@@ -49,10 +48,10 @@ public class BTSettings extends AppCompatActivity {
                     Intent serverIntent = new Intent(BTSettings.this, DeviceList.class);
                     startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_INSECURE);
                 }
-                else if (item.equals("Make discoverable")) {
+                /*else if (item.equals("Make discoverable")) {
                     // Ensure this device is discoverable by others
                     ensureDiscoverable();
-                }
+                }*/
                 finish();
             }
         });
@@ -61,12 +60,12 @@ public class BTSettings extends AppCompatActivity {
 /**
  * Makes this device discoverable.
  */
-    private void ensureDiscoverable() {
-        if (mBluetoothAdapter.getScanMode() !=
+    /*private void ensureDiscoverable() {
+        if (chat.mBluetoothAdapter.getScanMode() !=
                 BluetoothAdapter.SCAN_MODE_CONNECTABLE_DISCOVERABLE) {
             Intent discoverableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
             discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 300);
             startActivity(discoverableIntent);
         }
-    }
+    }*/
 }

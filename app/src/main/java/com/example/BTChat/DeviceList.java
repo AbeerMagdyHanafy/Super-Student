@@ -23,10 +23,7 @@ import java.util.Set;
 
 public class DeviceList extends AppCompatActivity {
 
-    /**
-     * Tag for Log
-     */
-    //private static final String TAG = "DeviceListActivity";
+
 
     /**
      * Return Intent extra
@@ -47,14 +44,11 @@ public class DeviceList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-        // Setup the window
-        //requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
         setContentView(R.layout.activity_device_list);
 
         setTitle(R.string.select_device);
         // Set result CANCELED in case the user backs out
-        //setResult(Activity.RESULT_CANCELED);
+        setResult(Activity.RESULT_CANCELED);
 
         // Initialize the button to perform device discovery
         Button scanButton = (Button) findViewById(R.id.button_scan);
@@ -126,10 +120,9 @@ public class DeviceList extends AppCompatActivity {
      * Start device discover with the BluetoothAdapter
      */
     private void doDiscovery() {
-        // Log.d(TAG, "doDiscovery()");
+
 
         // Indicate scanning in the title
-       // setProgressBarIndeterminateVisibility(true);
         setTitle(R.string.scanning);
 
         // Turn on sub-title for new devices
@@ -156,24 +149,26 @@ public class DeviceList extends AppCompatActivity {
             // Get the device MAC address, which is the last 17 chars in the View
             String info = ((TextView) v).getText().toString();
             String address = info.substring(info.length() - 17);
-            Toast.makeText(getApplicationContext(), address, Toast.LENGTH_LONG);
+            Toast.makeText(getApplicationContext(), address, Toast.LENGTH_LONG).show();
 
-            Intent intentSettings = getIntent();
-            String setting = intentSettings.getStringExtra("item");
+            //Intent intentSettings = getIntent();
+            //String setting = intentSettings.getStringExtra("item");
 
             // Create the result Intent and include the MAC address
             Intent intent = new Intent();
             intent.putExtra(EXTRA_DEVICE_ADDRESS, address);
-            intent.putExtra("setting",setting);
-
-
-
+           // intent.putExtra("setting",setting);
 
             // Set result and finish this Activity
             setResult(Activity.RESULT_OK, intent);
             finish();
         }
     };
+
+   /* @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }*/
 
     /**
      * The BroadcastReceiver that listens for discovered devices and changes the title when

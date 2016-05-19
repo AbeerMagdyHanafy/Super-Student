@@ -38,7 +38,7 @@ import java.util.UUID;
  */
 public class BluetoothChatService {
     // Debugging
-    private static final String TAG = "BluetoothChatService";
+   // private static final String TAG = "BluetoothChatService";
 
     // Name for the SDP record when creating server socket
     private static final String NAME_SECURE = "BluetoothChatSecure";
@@ -83,7 +83,6 @@ public class BluetoothChatService {
      * @param state An integer defining the current connection state
      */
     private synchronized void setState(int state) {
-        //Log.d(TAG, "setState() " + mState + " -> " + state);
         mState = state;
 
         // Give the new state to the Handler so the UI Activity can update
@@ -102,7 +101,6 @@ public class BluetoothChatService {
      * session in listening (server) mode. Called by the Activity onResume()
      */
     public synchronized void start() {
-       // Log.d(TAG, "start");
 
         // Cancel any thread attempting to make a connection
         if (mConnectThread != null) {
@@ -136,7 +134,6 @@ public class BluetoothChatService {
      * @param secure Socket Security type - Secure (true) , Insecure (false)
      */
     public synchronized void connect(BluetoothDevice device, boolean secure) {
-       // Log.d(TAG, "connect to: " + device);
 
         // Cancel any thread attempting to make a connection
         if (mState == STATE_CONNECTING) {
@@ -166,7 +163,6 @@ public class BluetoothChatService {
      */
     public synchronized void connected(BluetoothSocket socket, BluetoothDevice
             device, final String socketType) {
-        //Log.d(TAG, "connected, Socket Type:" + socketType);
 
         // Cancel the thread that completed the connection
         if (mConnectThread != null) {
@@ -208,7 +204,7 @@ public class BluetoothChatService {
      * Stop all threads
      */
     public synchronized void stop() {
-       // Log.d(TAG, "stop");
+
 
         if (mConnectThread != null) {
             mConnectThread.cancel();
@@ -258,7 +254,7 @@ public class BluetoothChatService {
         Message msg = mHandler.obtainMessage(Constants.MESSAGE_TOAST);
         Bundle bundle = new Bundle();
         bundle.putString(Constants.TOAST, "Unable to connect device");
-        //bundle.putString(Constants.TOAST, "Device is not connected app wil send to server"+DeviceList.EXTRA_DEVICE_ADDRESS);
+        //bundle.putString(Constants.TOAST, "Device is not connected app wil send to server"+DeviceList.address);
 
         msg.setData(bundle);
         mHandler.sendMessage(msg);

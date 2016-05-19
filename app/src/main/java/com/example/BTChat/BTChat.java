@@ -59,7 +59,7 @@ public class BTChat extends AppCompatActivity {
         /**
          * Local Bluetooth adapter
          */
-        private BluetoothAdapter mBluetoothAdapter = null;
+        public BluetoothAdapter mBluetoothAdapter = null;
 
         /**
          * Member object for the chat services
@@ -105,7 +105,7 @@ public class BTChat extends AppCompatActivity {
 
             // If the adapter is null, then Bluetooth is not supported
             if (mBluetoothAdapter == null) {
-                //FragmentActivity activity = getActivity();
+
                 Toast.makeText(this.getApplicationContext(), "Bluetooth is not available", Toast.LENGTH_LONG).show();
                 this.finish();
             }
@@ -160,7 +160,6 @@ public class BTChat extends AppCompatActivity {
          * Set up the UI and background operations for chat.
          */
     private void setupChat() {
-        //Log.d(TAG, "setupChat()");
 
         // Initialize the array adapter for the conversation thread
         mConversationArrayAdapter = new ArrayAdapter<String>(this.getApplicationContext(), R.layout.message);
@@ -174,12 +173,11 @@ public class BTChat extends AppCompatActivity {
         mSendButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Send a message using content of the edit text widget
-                //View view = getView();
-                // if (null != view) {
+
                 TextView textView = (TextView) findViewById(R.id.edit_text_out);
                 String message = textView.getText().toString();
                 sendMessage(message);
-                // }
+
             }
         });
 
@@ -190,17 +188,7 @@ public class BTChat extends AppCompatActivity {
         mOutStringBuffer = new StringBuffer("");
     }
 
-    /**
-     * Makes this device discoverable.
-     */
-   /* private void ensureDiscoverable() {
-        if (mBluetoothAdapter.getScanMode() !=
-                BluetoothAdapter.SCAN_MODE_CONNECTABLE_DISCOVERABLE) {
-            Intent discoverableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
-            discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 300);
-            startActivity(discoverableIntent);
-        }
-    }*/
+
 
     /**
      * Sends a message.
@@ -245,7 +233,7 @@ public class BTChat extends AppCompatActivity {
     };
 
     /**
-     * Updates the status on the action bar.
+     * Updates the status of connection.
      *
      * @param resId a string resource ID
      */
@@ -254,7 +242,7 @@ public class BTChat extends AppCompatActivity {
     }
 
     /**
-     * Updates the status on the action bar.
+     * Updates the status of connection.
      *
      * @param subTitle status
      */
@@ -335,7 +323,6 @@ public class BTChat extends AppCompatActivity {
                     setupChat();
                 } else {
                     // User did not enable Bluetooth or an error occurred
-                    //Log.d(TAG, "BT not enabled");
                     Toast.makeText(this.getApplicationContext(), R.string.bt_not_enabled_leaving,
                             Toast.LENGTH_SHORT).show();
                     this.finish();
@@ -359,34 +346,8 @@ public class BTChat extends AppCompatActivity {
         mChatService.connect(device, secure);
     }
 
-   /*@Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.bluetooth_chat, menu);
-    }*/
 
-   /* @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.secure_connect_scan: {
-                // Launch the DeviceListActivity to see devices and do scan
-                Intent serverIntent = new Intent(BluetoothChat.this, DeviceList.class);
-                startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_SECURE);
-                return true;
-            }
-            case R.id.insecure_connect_scan: {
-                // Launch the DeviceListActivity to see devices and do scan
-                Intent serverIntent = new Intent(BluetoothChat.this, DeviceList.class);
-                startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_INSECURE);
-                return true;
-            }
-            case R.id.discoverable: {
-                // Ensure this device is discoverable by others
-                ensureDiscoverable();
-                return true;
-            }
-        }
-        return false;
-    }*/
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
