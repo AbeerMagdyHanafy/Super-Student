@@ -62,8 +62,6 @@ public class Map_Activity extends AppCompatActivity {
         @Override
         public void onLocationChanged(IALocation location) {
             Log.d(TAG, "location is: " + location.getLatitude() + "," + location.getLongitude());
-            if( location.getAccuracy()==30)
-                return;
             if (mImageView != null && mImageView.isReady()) {
                 IALatLng latLng = new IALatLng(location.getLatitude(), location.getLongitude());
                 PointF point = mFloorPlan.coordinateToPoint(latLng);
@@ -105,7 +103,7 @@ public class Map_Activity extends AppCompatActivity {
         mIALocationManager = IALocationManager.create(this);
         mFloorPlanManager = IAResourceManager.create(this);
 
-        /* optional setup of floor plan id
+        /* setup of floor plan id
            if setLocation is not called, then location manager tries to find
            location automatically */
         final String floorPlanId = getString(R.string.indooratlas_floor_plan_id);
@@ -179,7 +177,7 @@ public class Map_Activity extends AppCompatActivity {
     }
 
     /**
-     * Fetches floor plan data from IndoorAtlas server. Some room for cleaning up!!
+     * Fetches floor plan data from IndoorAtlas server. 
      */
     private void fetchFloorPlan(String id) {
         cancelPendingNetworkCalls();

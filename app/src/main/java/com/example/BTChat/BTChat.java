@@ -29,7 +29,7 @@ import com.example.superstudent.ToDoList.ToDo_Activity;
 
 public class BTChat extends AppCompatActivity {
 
-
+        //private static final String TAG = "BluetoothChatFragment";
 
         // Intent request codes
         private static final int REQUEST_CONNECT_DEVICE_SECURE = 1;
@@ -59,7 +59,7 @@ public class BTChat extends AppCompatActivity {
         /**
          * Local Bluetooth adapter
          */
-        public BluetoothAdapter mBluetoothAdapter = null;
+        private BluetoothAdapter mBluetoothAdapter = null;
 
         /**
          * Member object for the chat services
@@ -67,9 +67,8 @@ public class BTChat extends AppCompatActivity {
         private BluetoothChatService mChatService = null;
 
 
-        Button deviceListBtn;
+        Button btnDeviceList;
         TextView stateTxtView;
-        Button  btSettingsBtn;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -77,15 +76,14 @@ public class BTChat extends AppCompatActivity {
             setContentView(R.layout.activity_btchat);
 
             stateTxtView=(TextView) findViewById(R.id.state);
-            deviceListBtn=(Button) findViewById(R.id.btn_device_list);
-            btSettingsBtn=(Button) findViewById(R.id.btn_bt_settings);
+            btnDeviceList=(Button) findViewById(R.id.btn_device_list);
             mConversationView = (ListView) findViewById(R.id.in);
             mOutEditText = (EditText) findViewById(R.id.edit_text_out);
             mSendButton = (Button) findViewById(R.id.button_send);
             // Get local Bluetooth adapter
             mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
-            deviceListBtn.setOnClickListener(new View.OnClickListener() {
+            btnDeviceList.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
@@ -94,18 +92,9 @@ public class BTChat extends AppCompatActivity {
                 }
             });
 
-            btSettingsBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(BTChat.this, BTSettings.class);
-                    startActivity(intent);
-                }
-            });
-
 
             // If the adapter is null, then Bluetooth is not supported
             if (mBluetoothAdapter == null) {
-
                 Toast.makeText(this.getApplicationContext(), "Bluetooth is not available", Toast.LENGTH_LONG).show();
                 this.finish();
             }
@@ -126,7 +115,14 @@ public class BTChat extends AppCompatActivity {
             } else if (mChatService == null) {
                 setupChat();
             }
+            btnDeviceList.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
+                    Intent intent = new Intent(BTChat.this, DeviceList.class);
+                    startActivity(intent);
+                }
+            });
         }
 
         @Override
@@ -151,12 +147,16 @@ public class BTChat extends AppCompatActivity {
                     mChatService.start();
                 }
             }
-
+            btnDeviceList.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent serverIntent = new Intent(BTChat.this, DeviceList.class);
+                    startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_SECURE);
+                }
+            });
         }
 
-
-
-        /**
+     /**
          * Set up the UI and background operations for chat.
          */
     private void setupChat() {
@@ -172,7 +172,6 @@ public class BTChat extends AppCompatActivity {
         // Initialize the send button with a listener that for click events
         mSendButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // Send a message using content of the edit text widget
 
                 TextView textView = (TextView) findViewById(R.id.edit_text_out);
                 String message = textView.getText().toString();
@@ -188,7 +187,17 @@ public class BTChat extends AppCompatActivity {
         mOutStringBuffer = new StringBuffer("");
     }
 
-
+    /**
+     * Makes this device discoverable.
+     */
+   /* private void ensureDiscoverable() {
+        if (mBluetoothAdapter.getScanMode() !=
+                BluetoothAdapter.SCAN_MODE_CONNECTABLE_DISCOVERABLE) {
+            Intent discoverableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
+            discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 300);
+            startActivity(discoverableIntent);
+        }
+    }*/
 
     /**
      * Sends a message.
@@ -233,20 +242,22 @@ public class BTChat extends AppCompatActivity {
     };
 
     /**
-     * Updates the status of connection.
+     * Updates the status
      *
      * @param resId a string resource ID
      */
     private void setStatus(int resId) {
+
         stateTxtView.setText(resId);
     }
 
     /**
-     * Updates the status of connection.
+     * Updates the status
      *
      * @param subTitle status
      */
     private void setStatus(CharSequence subTitle) {
+
         stateTxtView.setText(subTitle);
     }
 
@@ -256,6 +267,7 @@ public class BTChat extends AppCompatActivity {
     private final Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
+
             switch (msg.what) {
                 case Constants.MESSAGE_STATE_CHANGE:
                     switch (msg.arg1) {
@@ -345,7 +357,6 @@ public class BTChat extends AppCompatActivity {
         // Attempt to connect to the device
         mChatService.connect(device, secure);
     }
-
 
 
 

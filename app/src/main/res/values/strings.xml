@@ -12,7 +12,7 @@
         <item> TA </item>
     </string-array>
     <string name="title_activity_main2">Main2Activity</string>
-    <string name="indooratlas_floor_plan_id">8984a7c7-6328-48a5-b8d8-01dac3305158</string>
+    <string name="indooratlas_floor_plan_id">193d3381-5ab1-4a82-a9bc-79ca4859cb45</string>
     <!--  BluetoothChat -->
     <string name="send">Send</string>
     <string name="not_connected">You are not connected to a device</string>

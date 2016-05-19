@@ -20,7 +20,7 @@
     android:hint="email"
     android:theme="@style/AppTheme.AppBarOverlay" />
 
-    <EditText
+    <EditTexts
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ed_password"
@@ -30,21 +30,12 @@
         android:hint="Password"
         android:theme="@style/AppTheme.AppBarOverlay" />
 
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ed_password"
-        android:id="@+id/spinner_position"
-        android:entries="@array/position"
-
-        android:theme="@style/AppTheme.AppBarOverlay"></Spinner>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/byn_done"
+        android:id="@+id/btn_submit"
         android:text="Submit"
         android:layout_centerHorizontal="true"
-        android:onClick="submit"
         android:layout_alignParentBottom="true"/>
 </RelativeLayout>

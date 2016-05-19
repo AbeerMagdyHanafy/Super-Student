@@ -38,7 +38,7 @@ import java.util.UUID;
  */
 public class BluetoothChatService {
     // Debugging
-   // private static final String TAG = "BluetoothChatService";
+    private static final String TAG = "BluetoothChatService";
 
     // Name for the SDP record when creating server socket
     private static final String NAME_SECURE = "BluetoothChatSecure";
@@ -254,7 +254,7 @@ public class BluetoothChatService {
         Message msg = mHandler.obtainMessage(Constants.MESSAGE_TOAST);
         Bundle bundle = new Bundle();
         bundle.putString(Constants.TOAST, "Unable to connect device");
-        //bundle.putString(Constants.TOAST, "Device is not connected app wil send to server"+DeviceList.address);
+        //bundle.putString(Constants.TOAST, "Device is not connected app wil send to server"+DeviceList.EXTRA_DEVICE_ADDRESS);
 
         msg.setData(bundle);
         mHandler.sendMessage(msg);
@@ -289,9 +289,9 @@ public class BluetoothChatService {
         private String mSocketType;
 
         public AcceptThread(boolean secure) {
-
             BluetoothServerSocket tmp = null;
             mSocketType = secure ? "Secure" : "Insecure";
+
             // Create a new listening server socket
             try {
                 if (secure) {
