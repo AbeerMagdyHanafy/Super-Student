@@ -1,14 +1,14 @@
 package com.example.superstudent;
 
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
-import com.example.BTChat.BTChat;
+import com.example.BTChat.DeviceList;
 import com.example.superstudent.Map.Map_Activity;
 import com.example.superstudent.Materials.Materials_Activity;
 import com.example.superstudent.Profile.Profile_Activity;
@@ -46,7 +46,7 @@ public class HomeMain extends AppCompatActivity {
         adapter.addFragment(new Materials_Activity(), "");
         adapter.addFragment(new Map_Activity(), "");
         adapter.addFragment(new ToDo_Activity(), "");
-        adapter.addFragment(new BTChat(), "");
+        adapter.addFragment(new DeviceList(), "");
         viewPager.setAdapter(adapter);
     }
 
