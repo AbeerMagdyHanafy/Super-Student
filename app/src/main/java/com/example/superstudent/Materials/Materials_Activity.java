@@ -1,35 +1,63 @@
 package com.example.superstudent.Materials;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 
-import com.example.BTChat.BTChat;
-import com.example.superstudent.Map.Map_Activity;
-import com.example.superstudent.Profile.Profile_Activity;
-import com.example.superstudent.Quotes.Home_Activity;
 import com.example.superstudent.R;
-import com.example.superstudent.ToDoList.ToDo_Activity;
 
 
-public class Materials_Activity extends AppCompatActivity {
+public class Materials_Activity extends Fragment {
 
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_materials);
-
-        ActionBar logo = getSupportActionBar();
-        logo.setTitle("Materials");
-   }
+    Button btn1,btn2,btn3,btn4;
 
     @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        //super.onCreate(savedInstanceState);
+        // setContentView(R.layout.activity_materials);
+
+        //ActionBar logo = getSupportActionBar();
+        //logo.setTitle("Materials");
+        View rootView = inflater.inflate(R.layout.activity_materials, container, false);
+        btn1=(Button)rootView.findViewById(R.id.year1btn);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Year1 nextFrag= new Year1();
+                getFragmentManager().beginTransaction()
+                        .replace(R.id.container, nextFrag)
+                        .commit();
+            }
+        });/*
+        btn2=(Button)rootView.findViewById(R.id.year2btn);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent done = new Intent(getContext(), Year2.class);
+                startActivity(done);
+            }
+        });
+        btn3=(Button)rootView.findViewById(R.id.year3btn);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent done = new Intent(getContext(), Year3.class);
+                startActivity(done);
+            }
+        });
+        btn4=(Button)rootView.findViewById(R.id.year4btn);
+        btn4.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent done = new Intent(getContext(), Year4.class);
+                startActivity(done);
+            }
+        });*/
+        return  rootView;
+
+    }
+
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_materials, menu);
         return true;
@@ -70,25 +98,25 @@ public class Materials_Activity extends AppCompatActivity {
     {
         if(view.getId()==R.id.year1btn)
         {
-            Intent done = new Intent(this, Year1.class);
+            Intent done = new Intent(getContext(), Year1.class);
             startActivity(done);
         }
         if(view.getId()==R.id.year2btn)
         {
-            Intent done = new Intent(this, Year2.class);
+            Intent done = new Intent(getContext(), Year2.class);
             startActivity(done);
         }
         if(view.getId()==R.id.year3btn)
         {
-            Intent done = new Intent(this, Year3.class);
+            Intent done = new Intent(getContext(), Year3.class);
             startActivity(done);
         }
         if(view.getId()==R.id.year4btn)
         {
-            Intent done = new Intent(this, Year4.class);
+            Intent done = new Intent(getContext(), Year4.class);
             startActivity(done);
         }
-    }
+    }*/
 
 
 }

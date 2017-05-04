@@ -1,25 +1,18 @@
 package com.example.superstudent.Quotes;
 
-import android.content.Context;
-import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.BTChat.BTChat;
-import com.example.superstudent.Map.Map_Activity;
-import com.example.superstudent.Materials.Materials_Activity;
-import com.example.superstudent.Profile.Profile_Activity;
 import com.example.superstudent.R;
-import com.example.superstudent.ToDoList.ToDo_Activity;
 
 
-public class Home_Activity extends AppCompatActivity {
+public class Home_Activity extends Fragment {
 
     QuoteRandom quoteRandom;
     SensorManager sensorManager;
@@ -29,17 +22,18 @@ public class Home_Activity extends AppCompatActivity {
     TextView tv_quote;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // super.onCreate(savedInstanceState);
+        //setContentView(R.layout.activity_home);
 
+        View rootView = inflater.inflate(R.layout.activity_home, container, false);
 
-
-        tv_quote = (TextView) findViewById(R.id.tv_quote);
+        tv_quote = (TextView) container.findViewById(R.id.tv_quote);
         quoteRandom =new QuoteRandom();
 
 
-        sensorManager = (SensorManager) this.getSystemService(Context.SENSOR_SERVICE);
+      /* sensorManager = (SensorManager)getActivity().getSystemService(Context.SENSOR_SERVICE);;
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         shake =new Shake(new Shake.OnShakeListener() {
             @Override
@@ -47,11 +41,14 @@ public class Home_Activity extends AppCompatActivity {
                 String quote= quoteRandom.getQuote();
                 tv_quote.setText(quote);
             }
-        });
+        });*/
+        return rootView;
     }
 
 
-    @Override
+
+
+   /*@Override
     public void onResume() {
         super.onResume();
         sensorManager.registerListener(shake, sensor, SensorManager.SENSOR_DELAY_UI);
@@ -103,5 +100,5 @@ public class Home_Activity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 }

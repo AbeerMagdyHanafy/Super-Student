@@ -34,5 +34,7 @@
     <string name="secure_connect">Connect a device - Secure</string>
     <string name="insecure_connect">Connect a device - Insecure</string>
     <string name="discoverable">Make discoverable</string>
+    <string name="title_activity_home_tab">HomeTab</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 
 </resources>

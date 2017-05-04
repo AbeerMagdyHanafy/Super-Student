@@ -12,20 +12,16 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Looper;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.davemorrissey.labs.subscaleview.ImageSource;
-import com.example.BTChat.BTChat;
-import com.example.superstudent.Quotes.Home_Activity;
-import com.example.superstudent.Materials.Materials_Activity;
-import com.example.superstudent.Profile.Profile_Activity;
 import com.example.superstudent.R;
-import com.example.superstudent.ToDoList.ToDo_Activity;
 import com.indooratlas.android.sdk.IALocation;
 import com.indooratlas.android.sdk.IALocationListener;
 import com.indooratlas.android.sdk.IALocationManager;
@@ -43,7 +39,7 @@ import java.io.File;
 
 //import com.indooratlas.android.sdk.examples.SdkExample;
 
-public class Map_Activity extends AppCompatActivity {
+public class Map_Activity extends Fragment {
 
     private static final String TAG = "MAP";
 
@@ -91,17 +87,18 @@ public class Map_Activity extends AppCompatActivity {
     };
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_map);
         // prevent the screen going to sleep while app is on foreground
         //findViewById(android.R.id.content).setKeepScreenOn(true);
+        View rootView = inflater.inflate(R.layout.activity_map, container, false);
 
-        mImageView = (BlueDotView) findViewById(R.id.imageView);
+        mImageView = (BlueDotView) rootView.findViewById(R.id.imageView);
 
-        mDownloadManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-        mIALocationManager = IALocationManager.create(this);
-        mFloorPlanManager = IAResourceManager.create(this);
+        mDownloadManager = (DownloadManager) getActivity().getSystemService(Context.DOWNLOAD_SERVICE);
+        mIALocationManager = IALocationManager.create(this.getActivity());
+        mFloorPlanManager = IAResourceManager.create(this.getActivity());
 
         /* setup of floor plan id
            if setLocation is not called, then location manager tries to find
@@ -111,30 +108,30 @@ public class Map_Activity extends AppCompatActivity {
             final IALocation location = IALocation.from(IARegion.floorPlan(floorPlanId));
             mIALocationManager.setLocation(location);
         }
-
+        return rootView;
     }
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
         mIALocationManager.destroy();
     }
 
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
         // starts receiving location updates
         mIALocationManager.requestLocationUpdates(IALocationRequest.create(), mLocationListener);
         mIALocationManager.registerRegionListener(mRegionListener);
-        registerReceiver(onComplete, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        getActivity().registerReceiver(onComplete, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
     }
 
     @Override
-    protected void onPause() {
+    public void onPause() {
         super.onPause();
         mIALocationManager.removeLocationUpdates(mLocationListener);
         mIALocationManager.unregisterRegionListener(mRegionListener);
-        unregisterReceiver(onComplete);
+        getActivity().unregisterReceiver(onComplete);
     }
 
     /**
@@ -177,7 +174,7 @@ public class Map_Activity extends AppCompatActivity {
     }
 
     /**
-     * Fetches floor plan data from IndoorAtlas server. 
+     * Fetches floor plan data from IndoorAtlas server.
      */
     private void fetchFloorPlan(String id) {
         cancelPendingNetworkCalls();
@@ -215,7 +212,7 @@ public class Map_Activity extends AppCompatActivity {
                     } else {
                         // do something with error
                         if (!asyncResult.isCancelled()) {
-                            Toast.makeText(Map_Activity.this,
+                            Toast.makeText(Map_Activity.this.getActivity(),
                                     (result.getError() != null
                                             ? "error loading floor plan: " + result.getError()
                                             : "access to floor plan denied"), Toast.LENGTH_LONG)
@@ -233,7 +230,7 @@ public class Map_Activity extends AppCompatActivity {
         }
     }
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_map, menu);
@@ -271,5 +268,5 @@ public class Map_Activity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 }

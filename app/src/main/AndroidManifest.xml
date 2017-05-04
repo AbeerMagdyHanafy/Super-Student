@@ -41,7 +41,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Quotes.Home_Activity"
-
             android:label="@string/title_activity_home_"
             android:screenOrientation="portrait" />
         <activity
@@ -56,7 +55,6 @@
         <activity
             android:name=".Map.Map_Activity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".Materials.Year1"
             android:screenOrientation="portrait" />
@@ -80,10 +78,17 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-        <activity android:name="com.example.BTChat.BTChat"  android:screenOrientation="portrait"/>
-        <activity android:name="com.example.BTChat.DeviceList" android:screenOrientation="portrait"/>
-        <activity android:name="com.example.BTChat.BTSettings" android:screenOrientation="portrait"></activity>
 
+        <activity
+            android:name="com.example.BTChat.BTChat"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.example.BTChat.DeviceList"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.example.BTChat.BTSettings"
+            android:screenOrientation="portrait" />
+        <activity android:name=".HomeMain" />
     </application>
 
 </manifest>

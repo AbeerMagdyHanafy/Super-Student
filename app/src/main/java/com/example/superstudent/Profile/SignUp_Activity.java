@@ -1,11 +1,11 @@
 package com.example.superstudent.Profile;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.view.View;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -14,7 +14,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.superstudent.Quotes.Home_Activity;
+import com.example.superstudent.HomeMain;
 import com.example.superstudent.R;
 
 import java.util.HashMap;
@@ -66,7 +66,7 @@ public class SignUp_Activity extends AppCompatActivity implements View.OnClickLi
             public void onResponse(String response) {
                 Toast.makeText(SignUp_Activity.this,response,Toast.LENGTH_LONG).show();
 
-                Intent intent = new Intent(getApplicationContext(), Home_Activity.class);
+                Intent intent = new Intent(getApplicationContext(), HomeMain.class);
                 startActivity(intent);
             }
         },

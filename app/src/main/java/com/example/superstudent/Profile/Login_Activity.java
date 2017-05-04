@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
-import com.example.superstudent.Quotes.Home_Activity;
+import com.example.superstudent.HomeMain;
 import com.example.superstudent.R;
 
 
@@ -28,7 +28,7 @@ public class Login_Activity extends AppCompatActivity {
     }
 
     public void done(View view) {
-        Intent done = new Intent(this, Home_Activity.class);
+        Intent done = new Intent(this, HomeMain.class);
         startActivity(done);
     }
 
