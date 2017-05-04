@@ -7,11 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
 import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -20,14 +20,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.superstudent.Quotes.Home_Activity;
-import com.example.superstudent.Map.Map_Activity;
-import com.example.superstudent.Materials.Materials_Activity;
-import com.example.superstudent.Profile.Profile_Activity;
 import com.example.superstudent.R;
-import com.example.superstudent.ToDoList.ToDo_Activity;
 
-public class BTChat extends AppCompatActivity {
+public class BTChat extends Fragment {
 
         //private static final String TAG = "BluetoothChatFragment";
 
@@ -66,20 +61,21 @@ public class BTChat extends AppCompatActivity {
          */
         private BluetoothChatService mChatService = null;
 
-
+        View rootView;
         Button btnDeviceList;
         TextView stateTxtView;
 
         @Override
-        public void onCreate(Bundle savedInstanceState) {
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_btchat);
+            rootView = inflater.inflate(R.layout.activity_btchat, container, false);
 
-            stateTxtView=(TextView) findViewById(R.id.state);
-            btnDeviceList=(Button) findViewById(R.id.btn_device_list);
-            mConversationView = (ListView) findViewById(R.id.in);
-            mOutEditText = (EditText) findViewById(R.id.edit_text_out);
-            mSendButton = (Button) findViewById(R.id.button_send);
+            stateTxtView=(TextView) rootView.findViewById(R.id.state);
+            btnDeviceList=(Button) rootView.findViewById(R.id.btn_device_list);
+            mConversationView = (ListView) rootView.findViewById(R.id.in);
+            mOutEditText = (EditText) rootView.findViewById(R.id.edit_text_out);
+            mSendButton = (Button) rootView.findViewById(R.id.button_send);
             // Get local Bluetooth adapter
             mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
@@ -87,7 +83,7 @@ public class BTChat extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(BTChat.this, DeviceList.class);
+                    Intent intent = new Intent(BTChat.this.getActivity(), DeviceList.class);
                     startActivity(intent);
                 }
             });
@@ -95,9 +91,10 @@ public class BTChat extends AppCompatActivity {
 
             // If the adapter is null, then Bluetooth is not supported
             if (mBluetoothAdapter == null) {
-                Toast.makeText(this.getApplicationContext(), "Bluetooth is not available", Toast.LENGTH_LONG).show();
-                this.finish();
+                Toast.makeText(this.getActivity(), "Bluetooth is not available", Toast.LENGTH_LONG).show();
+                getActivity().finish();
             }
+            return rootView;
         }
 
 
@@ -119,7 +116,7 @@ public class BTChat extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(BTChat.this, DeviceList.class);
+                    Intent intent = new Intent(BTChat.this.getActivity(), DeviceList.class);
                     startActivity(intent);
                 }
             });
@@ -150,7 +147,7 @@ public class BTChat extends AppCompatActivity {
             btnDeviceList.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent serverIntent = new Intent(BTChat.this, DeviceList.class);
+                    Intent serverIntent = new Intent(BTChat.this.getActivity(), DeviceList.class);
                     startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_SECURE);
                 }
             });
@@ -162,7 +159,7 @@ public class BTChat extends AppCompatActivity {
     private void setupChat() {
 
         // Initialize the array adapter for the conversation thread
-        mConversationArrayAdapter = new ArrayAdapter<String>(this.getApplicationContext(), R.layout.message);
+        mConversationArrayAdapter = new ArrayAdapter<String>(this.getActivity(), R.layout.message);
 
         mConversationView.setAdapter(mConversationArrayAdapter);
 
@@ -173,7 +170,7 @@ public class BTChat extends AppCompatActivity {
         mSendButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                TextView textView = (TextView) findViewById(R.id.edit_text_out);
+                TextView textView = (TextView) rootView.findViewById(R.id.edit_text_out);
                 String message = textView.getText().toString();
                 sendMessage(message);
 
@@ -181,7 +178,7 @@ public class BTChat extends AppCompatActivity {
         });
 
         // Initialize the BluetoothChatService to perform bluetooth connections
-        mChatService = new BluetoothChatService(this.getApplicationContext(), mHandler);
+        mChatService = new BluetoothChatService(this.getActivity(), mHandler);
 
         // Initialize the buffer for outgoing messages
         mOutStringBuffer = new StringBuffer("");
@@ -209,7 +206,7 @@ public class BTChat extends AppCompatActivity {
     private void sendMessage(String message) {
         // Check that we're actually connected before trying anything
         if (mChatService.getState() != BluetoothChatService.STATE_CONNECTED) {
-            Toast.makeText(this.getApplicationContext(), R.string.not_connected, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this.getActivity(), R.string.not_connected, Toast.LENGTH_SHORT).show();
             return;
 
         }
@@ -300,13 +297,13 @@ public class BTChat extends AppCompatActivity {
                     // save the connected device's name
                     mConnectedDeviceName = msg.getData().getString(Constants.DEVICE_NAME);
                     if (null != this) {
-                        Toast.makeText(getApplicationContext(), "Connected to "
+                        Toast.makeText(getActivity(), "Connected to "
                                 + mConnectedDeviceName, Toast.LENGTH_SHORT).show();
                     }
                     break;
                 case Constants.MESSAGE_TOAST:
                     if (null != this) {
-                        Toast.makeText(getApplicationContext(), msg.getData().getString(Constants.TOAST),
+                        Toast.makeText(getActivity(), msg.getData().getString(Constants.TOAST),
                                 Toast.LENGTH_SHORT).show();
                     }
                     break;
@@ -335,9 +332,9 @@ public class BTChat extends AppCompatActivity {
                     setupChat();
                 } else {
                     // User did not enable Bluetooth or an error occurred
-                    Toast.makeText(this.getApplicationContext(), R.string.bt_not_enabled_leaving,
+                    Toast.makeText(this.getActivity(), R.string.bt_not_enabled_leaving,
                             Toast.LENGTH_SHORT).show();
-                    this.finish();
+                    getActivity().finish();
                 }
         }
     }
@@ -360,7 +357,7 @@ public class BTChat extends AppCompatActivity {
 
 
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_chat, menu);
@@ -397,6 +394,6 @@ public class BTChat extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 }
 

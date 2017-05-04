@@ -33,7 +33,7 @@ public class Home_Activity extends Fragment {
         quoteRandom =new QuoteRandom();
 
 
-      /* sensorManager = (SensorManager)getActivity().getSystemService(Context.SENSOR_SERVICE);;
+       /*sensorManager = (SensorManager)getActivity().getSystemService(Context.SENSOR_SERVICE);;
         sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         shake =new Shake(new Shake.OnShakeListener() {
             @Override
@@ -63,7 +63,7 @@ public class Home_Activity extends Fragment {
     }
 
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_home, menu);

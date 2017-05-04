@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.BTChat.BTChat;
 import com.example.superstudent.Map.Map_Activity;
 import com.example.superstudent.Materials.Materials_Activity;
 import com.example.superstudent.Profile.Profile_Activity;
@@ -33,6 +34,7 @@ public class HomeMain extends AppCompatActivity {
         tabLayout.getTabAt(2).setIcon(R.drawable.books_stack);
         tabLayout.getTabAt(3).setIcon(R.drawable.map);
         tabLayout.getTabAt(4).setIcon(R.drawable.list);
+        tabLayout.getTabAt(5).setIcon(R.drawable.bluetooth1);
 
     }
 
@@ -44,6 +46,7 @@ public class HomeMain extends AppCompatActivity {
         adapter.addFragment(new Materials_Activity(), "");
         adapter.addFragment(new Map_Activity(), "");
         adapter.addFragment(new ToDo_Activity(), "");
+        adapter.addFragment(new BTChat(), "");
         viewPager.setAdapter(adapter);
     }
 
