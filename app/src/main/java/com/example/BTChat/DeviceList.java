@@ -128,7 +128,7 @@ public class DeviceList extends Fragment {
 
         // Indicate scanning in the title
         getActivity().setProgressBarIndeterminateVisibility(true);
-        getActivity().setTitle(R.string.scanning);
+        //getActivity().setTitle(R.string.scanning);
 
         // Turn on sub-title for new devices
         rootView.findViewById(R.id.title_new_devices).setVisibility(View.VISIBLE);
@@ -186,7 +186,7 @@ public class DeviceList extends Fragment {
                 // When discovery is finished, change the Activity title
             } else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)) {
                 getActivity().setProgressBarIndeterminateVisibility(false);
-                getActivity().setTitle(R.string.select_device);
+                //getActivity().setTitle(R.string.select_device);
                 if (mNewDevicesArrayAdapter.getCount() == 0) {
                     String noDevices = getResources().getText(R.string.none_found).toString();
                     mNewDevicesArrayAdapter.add(noDevices);
