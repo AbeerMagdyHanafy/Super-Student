@@ -20,7 +20,7 @@ import java.util.List;
 
 public class HomeMain extends AppCompatActivity {
 
-    private static final String SORT_SETTING_KEY = "sort_setting";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
