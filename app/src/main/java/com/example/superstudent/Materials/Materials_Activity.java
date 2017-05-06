@@ -1,5 +1,6 @@
 package com.example.superstudent.Materials;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -17,7 +18,7 @@ public class Materials_Activity extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        //super.onCreate(savedInstanceState);
+        super.onCreateView(inflater,container,savedInstanceState);
         // setContentView(R.layout.activity_materials);
 
         //ActionBar logo = getSupportActionBar();
@@ -26,12 +27,10 @@ public class Materials_Activity extends Fragment {
         btn1=(Button)rootView.findViewById(R.id.year1btn);
         btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Year1 nextFrag= new Year1();
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.container, nextFrag)
-                        .commit();
+                Intent done = new Intent(getContext(), Year1.class);
+                startActivity(done);
             }
-        });/*
+        });
         btn2=(Button)rootView.findViewById(R.id.year2btn);
         btn2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -52,7 +51,7 @@ public class Materials_Activity extends Fragment {
                 Intent done = new Intent(getContext(), Year4.class);
                 startActivity(done);
             }
-        });*/
+        });
         return  rootView;
 
     }

@@ -21,7 +21,7 @@ public class Login_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_);
 
-        getSupportActionBar().setTitle("Login");
+//        getSupportActionBar().setTitle("Login");
 
         ed_username_login = (EditText) findViewById(R.id.ed_username_login);
         ed_password_login = (EditText) findViewById(R.id.ed_password_login);

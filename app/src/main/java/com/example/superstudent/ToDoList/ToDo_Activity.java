@@ -18,7 +18,7 @@ public class ToDo_Activity extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreateView(inflater,container,savedInstanceState);
         View rootView = inflater.inflate(R.layout.todolist, container, false);
         return  rootView;
 

@@ -24,6 +24,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,10 +35,12 @@
         <activity
             android:name=".Profile.SignUp_Activity"
             android:label="@string/title_activity_sign_up_"
+            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Profile.Login_Activity"
             android:label="@string/title_activity_login_"
+            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Quotes.Home_Activity"
@@ -55,18 +58,19 @@
         <activity
             android:name=".Map.Map_Activity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Materials.Year1"
-            android:screenOrientation="portrait" />
+        <activity android:name=".Materials.Year1"
+            android:label="Year One"
+            android:parentActivityName=".HomeMain"
+            > </activity>
         <activity
             android:name=".Materials.Year2"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".HomeMain" />
         <activity
             android:name=".Materials.Year3"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".HomeMain" />
         <activity
             android:name=".Materials.Year4"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".HomeMain" />
         <activity
             android:name=".Materials.AddMaterialLink"
             android:screenOrientation="portrait" />
@@ -88,7 +92,8 @@
         <activity
             android:name="com.example.BTChat.BTSettings"
             android:screenOrientation="portrait" />
-        <activity android:name=".HomeMain" />
+        <activity android:name=".HomeMain"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

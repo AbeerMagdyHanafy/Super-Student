@@ -6,10 +6,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.SimpleCursorAdapter;
@@ -18,7 +17,7 @@ import com.example.MaterialsDB.Material_DB_Helper;
 import com.example.MaterialsDB.Material_Database;
 import com.example.superstudent.R;
 
-public class Year1 extends Fragment {
+public class Year1 extends AppCompatActivity {
 
     GridView grid_view;
     Material_DB_Helper link;
@@ -26,21 +25,22 @@ public class Year1 extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_year1);
+        ActionBar logo = getSupportActionBar();
+        logo.setTitle("Year One");
+        ;
 
-        View rootView = inflater.inflate(R.layout.activity_year1, container, false);
-
-        grid_view = (GridView) rootView.findViewById(R.id.grid_year1);
-        link = new Material_DB_Helper(this.getActivity()); ///obj from class DB
+        grid_view = (GridView) findViewById(R.id.grid_year1);
+        link = new Material_DB_Helper(this); ///obj from class DB
 
         Show();
-        FloatingActionButton fab = (FloatingActionButton) rootView.findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), AddMaterialLink.class);
+                Intent intent = new Intent(getApplicationContext(), AddMaterialLink.class);
                 startActivity(intent);
 
             }
@@ -58,17 +58,16 @@ public class Year1 extends Fragment {
 
             }
         });
-        return rootView;
     }
 
     public void Show() {
-        link = new Material_DB_Helper(Year1.this.getActivity());
+        link = new Material_DB_Helper(Year1.this);
         SQLiteDatabase sqldb1 = link.getReadableDatabase();
         Cursor cursor1 = sqldb1.query(Material_Database.Mat_Table, new String[]{Material_Database.columns.ID2,
                 Material_Database.columns.mat_name,
                 Material_Database.columns.mat_link}, null, null, null, null, null);
 
-        list_Adapter1 = new SimpleCursorAdapter(this.getActivity(), android.R.layout.simple_list_item_1, cursor1, new String[]{
+        list_Adapter1 = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1, cursor1, new String[]{
                 Material_Database.columns.mat_name}, new int[]{android.R.id.text1}, 0);
         grid_view.setAdapter(list_Adapter1);
     }

@@ -3,8 +3,6 @@ package com.example.superstudent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
 import com.example.superstudent.Profile.Login_Activity;
@@ -22,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 //        logo.setDisplayShowHomeEnabled(true);
 //        logo.setLogo(android.R.drawable.btn_star);
 //        logo.setDisplayUseLogoEnabled(true);
-        getSupportActionBar().setTitle(" Super Student");
+        //getSupportActionBar().setTitle(" Super Student");
 
     }
 
@@ -36,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(sign_up);
     }
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -52,5 +50,5 @@ public class MainActivity extends AppCompatActivity {
 
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 }

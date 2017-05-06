@@ -14,10 +14,11 @@ import com.example.superstudent.R;
 public class Profile_Activity extends Fragment {
 
     Button button;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        super.onCreateView(inflater,container,savedInstanceState);
         View rootView = inflater.inflate(R.layout.activity_profile, container, false);
 
         button= (Button) rootView.findViewById(R.id.button);

@@ -14,13 +14,15 @@
         android:layout_height="30dp"
         android:layout_width="40dp"
         android:background="@drawable/friends"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        />
     <Button
         android:id="@+id/btn_bt_settings"
         android:layout_height="30dp"
         android:layout_width="40dp"
         android:background="@drawable/bluetooth"
         android:layout_toLeftOf="@+id/btn_device_list"
+
         />
     <TextView
         android:id="@+id/state"
@@ -55,7 +57,9 @@
                 android:id="@+id/button_send"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/send" />
+                android:text="@string/send"
+                android:background="@drawable/roundedbutton"
+                />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

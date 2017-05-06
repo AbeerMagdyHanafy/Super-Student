@@ -14,7 +14,7 @@
         android:text="Year 1"
         android:onClick="Choose"
         android:id="@+id/year1btn"
-        android:background="#308987"
+        android:background="@drawable/roundedbutton"
         android:textColor="#e9e9e9"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -27,7 +27,7 @@
         android:text="Year 2"
         android:onClick="Choose"
         android:id="@+id/year2btn"
-        android:background="#308987"
+        android:background="@drawable/roundedbutton"
         android:textColor="#e9e9e9"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="150dp"
@@ -39,7 +39,8 @@
         android:text="Year 3"
         android:id="@+id/year3btn"
         android:onClick="Choose"
-        android:background="#308987"
+        android:background="@drawable/roundedbutton"
+
         android:textColor="#e9e9e9"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="150dp" />
@@ -50,7 +51,7 @@
         android:text="Year 4"
         android:onClick="Choose"
         android:id="@+id/year4btn"
-        android:background="#308987"
+        android:background="@drawable/roundedbutton"
         android:textColor="#e9e9e9"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="200dp" />

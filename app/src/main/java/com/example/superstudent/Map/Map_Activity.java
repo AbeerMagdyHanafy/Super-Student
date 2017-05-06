@@ -89,7 +89,7 @@ public class Map_Activity extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
+        super.onCreateView(inflater,container,savedInstanceState);
         // prevent the screen going to sleep while app is on foreground
         //findViewById(android.R.id.content).setKeepScreenOn(true);
         View rootView = inflater.inflate(R.layout.activity_map, container, false);

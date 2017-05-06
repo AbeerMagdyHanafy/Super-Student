@@ -20,6 +20,7 @@ import java.util.List;
 
 public class HomeMain extends AppCompatActivity {
 
+    private static final String SORT_SETTING_KEY = "sort_setting";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,25 +35,24 @@ public class HomeMain extends AppCompatActivity {
         tabLayout.getTabAt(2).setIcon(R.drawable.books_stack);
         tabLayout.getTabAt(3).setIcon(R.drawable.map);
         tabLayout.getTabAt(4).setIcon(R.drawable.list);
-        tabLayout.getTabAt(5).setIcon(R.drawable.bluetooth1);
+        tabLayout.getTabAt(5).setIcon(R.drawable.chat2);
 
     }
 
     // Add Fragments to Tabs
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getSupportFragmentManager());
-        adapter.addFragment(new Home_Activity(), "");
-        adapter.addFragment(new Profile_Activity(), "");
-        adapter.addFragment(new Materials_Activity(), "");
-        adapter.addFragment(new Map_Activity(), "");
-        adapter.addFragment(new ToDo_Activity(), "");
-        adapter.addFragment(new DeviceList(), "");
+        adapter.addFragment(new Home_Activity());
+        adapter.addFragment(new Profile_Activity());
+        adapter.addFragment(new Materials_Activity());
+        adapter.addFragment(new Map_Activity());
+        adapter.addFragment(new ToDo_Activity());
+        adapter.addFragment(new DeviceList());
         viewPager.setAdapter(adapter);
     }
 
     static class Adapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
-        private final List<String> mFragmentTitleList = new ArrayList<>();
 
         public Adapter(FragmentManager manager) {
             super(manager);
@@ -68,15 +68,16 @@ public class HomeMain extends AppCompatActivity {
             return mFragmentList.size();
         }
 
-        public void addFragment(Fragment fragment, String title) {
+        public void addFragment(Fragment fragment) {
             mFragmentList.add(fragment);
-            mFragmentTitleList.add(title);
         }
 
-        @Override
-        public CharSequence getPageTitle(int position) {
+        /*@Override
+        /public CharSequence getPageTitle(int position) {
             return mFragmentTitleList.get(position);
-        }
+        }*/
 
     }
+
+
 }

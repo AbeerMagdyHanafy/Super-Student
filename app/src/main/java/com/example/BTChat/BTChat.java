@@ -68,7 +68,7 @@ public class BTChat extends Fragment {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
+            super.onCreateView(inflater,container,savedInstanceState);
             rootView = inflater.inflate(R.layout.activity_btchat, container, false);
 
             stateTxtView=(TextView) rootView.findViewById(R.id.state);
