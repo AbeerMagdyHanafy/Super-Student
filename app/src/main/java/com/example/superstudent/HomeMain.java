@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.BTChat.DeviceList;
+import com.example.BTChat.BTChat;
 import com.example.superstudent.Map.Map_Activity;
 import com.example.superstudent.Materials.Materials_Activity;
 import com.example.superstudent.Profile.Profile_Activity;
@@ -47,7 +47,7 @@ public class HomeMain extends AppCompatActivity {
         adapter.addFragment(new Materials_Activity());
         adapter.addFragment(new Map_Activity());
         adapter.addFragment(new ToDo_Activity());
-        adapter.addFragment(new DeviceList());
+        adapter.addFragment(new BTChat());
         viewPager.setAdapter(adapter);
     }
 

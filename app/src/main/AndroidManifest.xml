@@ -88,7 +88,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.example.BTChat.DeviceList"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".HomeMain"
+            />
         <activity
             android:name="com.example.BTChat.BTSettings"
             android:screenOrientation="portrait" />
