@@ -1,19 +1,26 @@
 package com.example.superstudent.Profile;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.superstudent.HomeMain;
 import com.example.superstudent.R;
+import com.facebook.Profile;
+import com.squareup.picasso.Picasso;
 
 
 public class Profile_Activity extends Fragment {
 
     Button button;
+    TextView usernameText;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -21,12 +28,19 @@ public class Profile_Activity extends Fragment {
         super.onCreateView(inflater,container,savedInstanceState);
         View rootView = inflater.inflate(R.layout.activity_profile, container, false);
 
-        button= (Button) rootView.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Toast.makeText(getActivity(),"Hellooo",Toast.LENGTH_LONG).show();
-            }
-        });
+        Context c = getActivity().getApplicationContext();
+        
+        //facebook
+        ImageView ppimageView = (ImageView) rootView.findViewById(R.id.pp_imageView);
+        Profile profile = Profile.getCurrentProfile();
+        String userName = profile.getFirstName()+ " "+ profile.getMiddleName()+" "+profile.getLastName();
+        //profile.getLinkUri();
+
+        Picasso.with(c).load(profile.getProfilePictureUri(150,150)).fit().into(ppimageView);
+
+        usernameText=(TextView) rootView.findViewById(R.id.txt_username_profile);
+        usernameText.setText(userName);
+
         return rootView;
 
     }

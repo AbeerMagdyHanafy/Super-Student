@@ -24,7 +24,7 @@
         android:layout_width="270dp"
         android:layout_height="270dp"
         android:id="@+id/tv_welcome"
-        android:src="@drawable/logo_only"
+        android:src="@drawable/logo"
         android:theme="@style/AppTheme.AppBarOverlay"
         android:layout_marginTop="62dp"
         android:layout_alignParentTop="true"

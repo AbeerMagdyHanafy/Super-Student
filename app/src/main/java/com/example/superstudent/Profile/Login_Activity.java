@@ -7,14 +7,25 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.superstudent.HomeMain;
 import com.example.superstudent.R;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
+
+import java.util.Arrays;
 
 
 public class Login_Activity extends AppCompatActivity {
 
     EditText ed_username_login, ed_password_login;
+    //facebook
+    LoginButton loginButton;
+    CallbackManager callbackManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +36,46 @@ public class Login_Activity extends AppCompatActivity {
 
         ed_username_login = (EditText) findViewById(R.id.ed_username_login);
         ed_password_login = (EditText) findViewById(R.id.ed_password_login);
+
+        //facebook login
+        callbackManager = CallbackManager.Factory.create();
+        loginButton = (LoginButton) findViewById(R.id.login_button);
+        loginButton.setReadPermissions(Arrays.asList("public_profile", "email"));
+
+        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                done();
+            }
+
+            @Override
+            public void onCancel() {
+                Toast.makeText(Login_Activity.this, "Facebook Login attempt is cancelled.", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(FacebookException exception) {
+                Toast.makeText(Login_Activity.this, "Error while trying to login with Facebook.", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public void done() {
+        Intent done = new Intent(this, HomeMain.class);
+        startActivity(done);
     }
 
     public void done(View view) {
         Intent done = new Intent(this, HomeMain.class);
         startActivity(done);
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

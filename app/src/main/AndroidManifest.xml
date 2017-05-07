@@ -20,6 +20,8 @@
         <meta-data
             android:name="com.indooratlas.android.sdk.API_SECRET"
             android:value="DA3mE567auyu3L5KOnXGTDwJSlsPNWsnYYQwdkrkdYRZBv23Ks0!mk9VbQLC0KDJ!)0cvyVeCQCSoPaP(N2T3bs%IFX1MkG5KKyDDbg0gZJ%A8%t!acBMgaOn1fulhPS" />
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"/>
 
         <activity
             android:name=".MainActivity"
@@ -74,6 +76,11 @@
         <activity
             android:name=".Materials.AddMaterialLink"
             android:screenOrientation="portrait" />
+
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
 
         <!--
      ATTENTION: This was auto-generated to add Google Play services to your project for

@@ -37,4 +37,7 @@
     <string name="title_activity_home_tab">HomeTab</string>
     <string name="section_format">Hello World from section: %1$d</string>
 
+    <!-- Facebook -->
+    <string name="facebook_app_id">219901501839775</string>
+
 </resources>

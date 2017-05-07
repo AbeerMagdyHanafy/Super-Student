@@ -19,7 +19,7 @@ android {
     }
 }
 repositories {
-
+    mavenCentral()
 }
 
 
@@ -36,4 +36,7 @@ dependencies {
     compile 'com.pubnub:pubnub-android:3.7.5'
 
     compile 'com.mcxiaoke.volley:library-aar:1.0.0'
+
+    //facebook
+    compile 'com.facebook.android:facebook-android-sdk:4.+'
 }
