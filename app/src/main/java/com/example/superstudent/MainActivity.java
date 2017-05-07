@@ -7,13 +7,24 @@ import android.view.View;
 
 import com.example.superstudent.Profile.Login_Activity;
 import com.example.superstudent.Profile.SignUp_Activity;
+import com.facebook.Profile;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class MainActivity extends AppCompatActivity {
+    Profile profile;
+    FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        profile=Profile.getCurrentProfile();
+//        auth=FirebaseAuth.getInstance();
+//        if(profile!=null || auth.getCurrentUser()!=null) {
+//            Intent loggedin = new Intent(this, HomeMain.class);
+//            startActivity(loggedin);
+//            finish();
+//        }
         setContentView(R.layout.activity_main);
 
 //        ActionBar logo = getSupportActionBar();

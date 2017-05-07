@@ -19,7 +19,6 @@ import com.squareup.picasso.Picasso;
 
 public class Profile_Activity extends Fragment {
 
-    Button button;
     TextView usernameText;
 
     @Override
@@ -29,17 +28,18 @@ public class Profile_Activity extends Fragment {
         View rootView = inflater.inflate(R.layout.activity_profile, container, false);
 
         Context c = getActivity().getApplicationContext();
-        
+
         //facebook
         ImageView ppimageView = (ImageView) rootView.findViewById(R.id.pp_imageView);
         Profile profile = Profile.getCurrentProfile();
-        String userName = profile.getFirstName()+ " "+ profile.getMiddleName()+" "+profile.getLastName();
+        if(profile != null)
+        {String userName = profile.getFirstName()+ " "+ profile.getMiddleName()+" "+profile.getLastName();
         //profile.getLinkUri();
 
         Picasso.with(c).load(profile.getProfilePictureUri(150,150)).fit().into(ppimageView);
 
         usernameText=(TextView) rootView.findViewById(R.id.txt_username_profile);
-        usernameText.setText(userName);
+        usernameText.setText(userName);}
 
         return rootView;
 
