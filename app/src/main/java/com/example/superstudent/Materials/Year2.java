@@ -72,7 +72,11 @@ public class Year2 extends AppCompatActivity {
         grid_view.setAdapter(list_Adapter1);
     }
 
+    public void onResume() {
+        super.onResume();
+        Show();
 
+    }
 }
 
 

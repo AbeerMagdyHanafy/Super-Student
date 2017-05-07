@@ -334,7 +334,7 @@ public class BTChat extends Fragment {
                     // User did not enable Bluetooth or an error occurred
                     Toast.makeText(this.getActivity(), R.string.bt_not_enabled_leaving,
                             Toast.LENGTH_SHORT).show();
-                    getActivity().finish();
+
                 }
         }
     }

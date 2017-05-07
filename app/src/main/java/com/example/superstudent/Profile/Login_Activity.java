@@ -86,7 +86,7 @@ public class Login_Activity extends AppCompatActivity {
                                         Toast.makeText(Login_Activity.this, "Authentication failed, check your email and password", Toast.LENGTH_LONG).show();
                                     }
                                 } else {
-                                    Toast.makeText(Login_Activity.this, "You Successfully Logged in with "+email_login, Toast.LENGTH_LONG).show();
+                                    Toast.makeText(Login_Activity.this, "Welcome Student", Toast.LENGTH_LONG).show();
                                     done();
                                     finish();
                                 }

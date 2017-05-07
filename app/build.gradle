@@ -34,7 +34,7 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.davemorrissey.labs:subsampling-scale-image-view:3.2.0'
     compile 'com.pubnub:pubnub-android:3.7.5'
-
+    compile 'com.github.rey5137:material:1.2.4'
     compile 'com.mcxiaoke.volley:library-aar:1.0.0'
 
     //facebook

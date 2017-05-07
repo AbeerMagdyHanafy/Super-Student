@@ -66,13 +66,14 @@ public class AddMaterialLink extends AppCompatActivity {
 
                     Toast.makeText(getApplicationContext(), "Link Added", Toast.LENGTH_SHORT).show();
 
-
+                    finish();
 
                 } else {
                     Toast.makeText(getApplicationContext(), "Please Add Your Material's Link !!", Toast.LENGTH_SHORT).show();
                 }
 
             }
+
         });
     }
 
