@@ -30,7 +30,6 @@ public class Year1 extends AppCompatActivity {
         setContentView(R.layout.activity_year1);
         ActionBar logo = getSupportActionBar();
         logo.setTitle("Year One");
-        ;
 
         grid_view = (GridView) findViewById(R.id.grid_year1);
         link = new Material_DB_Helper(this); ///obj from class DB
@@ -40,8 +39,8 @@ public class Year1 extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AddMaterialLink.class);
-                startActivity(intent);
+                Intent i = new Intent(getApplicationContext(), AddMaterialLink.class).putExtra("from", "activity1");
+                startActivity(i);
 
             }
         });
@@ -63,15 +62,14 @@ public class Year1 extends AppCompatActivity {
     public void Show() {
         link = new Material_DB_Helper(Year1.this);
         SQLiteDatabase sqldb1 = link.getReadableDatabase();
-        Cursor cursor1 = sqldb1.query(Material_Database.Mat_Table, new String[]{Material_Database.columns.ID2,
-                Material_Database.columns.mat_name,
-                Material_Database.columns.mat_link}, null, null, null, null, null);
+        Cursor cursor1 = sqldb1.query(Material_Database.Material_Table, new String[]{Material_Database.columns.ID,
+                Material_Database.columns.material_name,
+                Material_Database.columns.material_link,String.valueOf(1)}, "year=1", null, null, null, null);
 
         list_Adapter1 = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_1, cursor1, new String[]{
-                Material_Database.columns.mat_name}, new int[]{android.R.id.text1}, 0);
+                Material_Database.columns.material_name}, new int[]{android.R.id.text1}, 0);
         grid_view.setAdapter(list_Adapter1);
     }
 
 
 }
-

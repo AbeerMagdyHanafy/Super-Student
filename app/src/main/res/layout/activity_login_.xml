@@ -45,15 +45,14 @@
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/btn_done_login"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp" />
+        android:layout_height="match_parent" />
 
     <ImageView
-        app:srcCompat="@drawable/logo"
+        app:srcCompat="@drawable/logo_only"
         android:id="@+id/imageView2"
         android:layout_width="200dp"
         android:layout_height="200dp"
