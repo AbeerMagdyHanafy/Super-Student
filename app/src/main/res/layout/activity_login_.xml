@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/ed_password_login"
         android:inputType="textWebPassword"
-        android:layout_below="@+id/ed_username_login"
-        android:hint="Password"
+        android:layout_below="@+id/ed_email_login"
+        android:hint="password"
         android:theme="@style/AppTheme.AppBarOverlay" />
 
     <Button
@@ -35,8 +35,8 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ed_username_login"
-        android:hint="user name"
+        android:id="@+id/ed_email_login"
+        android:hint="email"
         android:theme="@style/AppTheme.AppBarOverlay"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"

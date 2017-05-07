@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "16214700949",
+    "firebase_url": "https://superstudent-d5de9.firebaseio.com",
+    "project_id": "superstudent-d5de9",
+    "storage_bucket": "superstudent-d5de9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16214700949:android:9c0cb08632ef1709",
+        "android_client_info": {
+          "package_name": "com.example.superstudent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "16214700949-9hq6ds4nsnbidrql6djl4ta4l95qsa36.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRjU3wyjy348HLL3tJzAXz8VmRZ1S5rrI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
