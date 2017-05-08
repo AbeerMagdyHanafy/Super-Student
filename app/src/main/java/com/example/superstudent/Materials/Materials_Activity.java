@@ -4,11 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.superstudent.MainActivity;
 import com.example.superstudent.R;
+
+import static com.facebook.FacebookSdk.getApplicationContext;
 
 
 public class Materials_Activity extends Fragment {
@@ -23,6 +29,8 @@ public class Materials_Activity extends Fragment {
 
         //ActionBar logo = getSupportActionBar();
         //logo.setTitle("Materials");
+
+
         View rootView = inflater.inflate(R.layout.activity_materials, container, false);
         btn1=(Button)rootView.findViewById(R.id.year1btn);
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +64,26 @@ public class Materials_Activity extends Fragment {
 
     }
 
+
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        getActivity().getMenuInflater().inflate(R.menu.menu_logout, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        Intent intent;
+        if (id == R.id.logout_menu) {
+            intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+            return true;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
     /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_materials, menu);

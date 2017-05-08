@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Profile.Profile_Activity"
-    >
+    tools:context=".Profile.Profile_Activity">
 
     <ImageView
         android:layout_width="150dp"
@@ -28,6 +28,19 @@
         android:textColor="@android:color/primary_text_dark"
         android:textSize="20sp"
         android:textStyle="normal|bold" />
+
+
+    <com.rey.material.widget.Button
+        app:rd_enable="true"
+        app:rd_style="@style/Material.Drawable.Ripple.Touch.MatchView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_logout"
+        android:text="LogOut"
+        android:layout_margin="18dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:background="@drawable/roundedbutton"
+        />
 
 
 </FrameLayout>

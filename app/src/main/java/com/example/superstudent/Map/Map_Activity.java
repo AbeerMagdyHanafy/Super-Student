@@ -16,11 +16,15 @@ import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.davemorrissey.labs.subscaleview.ImageSource;
+import com.example.superstudent.MainActivity;
 import com.example.superstudent.R;
 import com.indooratlas.android.sdk.IALocation;
 import com.indooratlas.android.sdk.IALocationListener;
@@ -36,6 +40,8 @@ import com.indooratlas.android.sdk.resources.IAResultCallback;
 import com.indooratlas.android.sdk.resources.IATask;
 
 import java.io.File;
+
+import static com.facebook.FacebookSdk.getApplicationContext;
 
 //import com.indooratlas.android.sdk.examples.SdkExample;
 
@@ -230,6 +236,24 @@ public class Map_Activity extends Fragment {
         }
     }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        getActivity().getMenuInflater().inflate(R.menu.menu_logout, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        Intent intent;
+        if (id == R.id.logout_menu) {
+            intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+            return true;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
    /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
