@@ -123,8 +123,8 @@ public class Login_Activity extends AppCompatActivity implements
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = email_login.getText().toString();
-                final String password = password_login.getText().toString();
+                String email = email_login.getText().toString().trim();
+                final String password = password_login.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
@@ -201,14 +201,17 @@ public class Login_Activity extends AppCompatActivity implements
         if (requestCode == RC_SIGN_IN) {
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             GoogleSignInAccount acct = result.getSignInAccount();
-             personName = acct.getDisplayName();
-            String personGivenName = acct.getGivenName();
-            String personFamilyName = acct.getFamilyName();
-            String personEmail = acct.getEmail();
-             personPhoto = acct.getPhotoUrl();
+            if(acct !=null) {
+                personName = acct.getDisplayName();
+                String personGivenName = acct.getGivenName();
+                String personFamilyName = acct.getFamilyName();
+                String personEmail = acct.getEmail();
+                personPhoto = acct.getPhotoUrl();
 
-            Toast.makeText(getApplicationContext(),personName + personPhoto,Toast.LENGTH_LONG).show();
-            handleSignInResult(result);
+
+                Toast.makeText(getApplicationContext(), personName + personPhoto, Toast.LENGTH_LONG).show();
+                handleSignInResult(result);
+            }
         }
     }
 
