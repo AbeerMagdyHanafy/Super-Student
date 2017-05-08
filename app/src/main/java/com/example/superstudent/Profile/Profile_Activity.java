@@ -63,15 +63,10 @@ public class Profile_Activity extends Fragment {
         Picasso.with(c).load(profile.getProfilePictureUri(150,150)).fit().into(ppimageView);
 
         usernameText=(TextView) rootView.findViewById(R.id.txt_username_profile);
-       // usernameText.setText(userName);
+       usernameText.setText(userName);
         }
 
 
-        Intent login_google =getActivity().getIntent();
-        if(login_google.getStringExtra("personName")!=null)
-        {
-//           usernameText.setText(login_google.getStringExtra("personName"));
-        }
 
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override

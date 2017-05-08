@@ -208,7 +208,6 @@ public class Login_Activity extends AppCompatActivity implements
                 String personEmail = acct.getEmail();
                 personPhoto = acct.getPhotoUrl();
 
-
                 Toast.makeText(getApplicationContext(), personName + personPhoto, Toast.LENGTH_LONG).show();
                 handleSignInResult(result);
             }
@@ -237,16 +236,10 @@ public class Login_Activity extends AppCompatActivity implements
         First =false;
         editor.putBoolean(FirstTime, First);
         editor.commit();
-        if (personName !=null && personPhoto!=null) {
-            Intent done = new Intent(this, HomeMain.class);
-            done.putExtra("personName","ss");
-            done.putExtra("personPhoto",personPhoto);
-            startActivity(done);
-        }
-        else {
+
             Intent done = new Intent(this, HomeMain.class);
             startActivity(done);
-        }
+
     }
 
 
