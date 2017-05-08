@@ -22,6 +22,8 @@ import android.widget.TextView;
 import com.example.superstudent.MainActivity;
 import com.example.superstudent.R;
 import com.facebook.Profile;
+import com.facebook.login.LoginManager;
+import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
 
 import static com.facebook.FacebookSdk.getApplicationContext;
@@ -35,6 +37,7 @@ public class Profile_Activity extends Fragment {
     SharedPreferences sharedpreferences;
     boolean First=true;
     String FirstTime ="FirstTime";
+    FirebaseAuth auth;
 
 
 
@@ -47,7 +50,7 @@ public class Profile_Activity extends Fragment {
         Context c = getActivity().getApplicationContext();
 
          //((AppCompatActivity) getActivity()).getSupportActionBar();
-
+        auth=FirebaseAuth.getInstance();
          btn_logout = (Button) rootView.findViewById(R.id.btn_logout);
         //facebook
         ImageView ppimageView = (ImageView) rootView.findViewById(R.id.pp_imageView);
@@ -81,6 +84,9 @@ public class Profile_Activity extends Fragment {
                 First =true;
                 editor.putBoolean(FirstTime, First);
                 editor.commit();
+                //logout from firebase and Facebook;
+                auth.signOut();
+                LoginManager.getInstance().logOut();
                 Intent logout = new Intent(getActivity(), MainActivity.class);
                 getActivity().startActivity(logout);
             }
